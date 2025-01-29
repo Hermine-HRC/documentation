@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1.1.1. Fonctionnement code &mdash; Documentation HRC Documentation 1.0.0</title>
+  <title>1.1.1. Installation &mdash; Documentation HRC Documentation 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -61,8 +61,17 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="Tree.html">1. Programmation Robots</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="Tree-ROS.html">1.1. Programmation ROS</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">1.1.1. Fonctionnement code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fonctionnement-test">1.1.2. Fonctionnement test</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.1.1. Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fonctionnement-code">1.1.2. Fonctionnement code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#les-fichiers-erb">1.1.2.1. Les fichiers <em>.erb</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#herminebot-ou-hrc">1.1.2.2. Herminebot ou HRC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fonctionnement-tests">1.1.3. Fonctionnement tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#executer-les-tests">1.1.3.1. Exécuter les tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execution-sur-github">1.1.3.2. Exécution sur GitHub</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Tree-Code_conventions.html">1.2. Conventions de programmation</a><ul>
@@ -99,7 +108,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="Tree.html"><span class="section-number">1. </span>Programmation Robots</a></li>
           <li class="breadcrumb-item"><a href="Tree-ROS.html"><span class="section-number">1.1. </span>Programmation ROS</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">1.1.1. </span>Fonctionnement code</li>
+      <li class="breadcrumb-item active"><span class="section-number">1.1.1. </span>Installation</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -108,12 +117,95 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="fonctionnement-code">
-<h1><span class="section-number">1.1.1. </span>Fonctionnement code<a class="headerlink" href="#fonctionnement-code" title="Lien permanent vers cette rubrique"></a></h1>
-<p>Le code ROS débute dans le dossier <code class="code docutils literal notranslate"><span class="pre">robot/ros_ws/</span></code> du dépôt GitHub.</p>
+  <div class="section" id="installation">
+<h1><span class="section-number">1.1.1. </span>Installation<a class="headerlink" href="#installation" title="Lien permanent vers cette rubrique"></a></h1>
+<p>La version de ROS utilisée est ROS2 Jazzy prévu pour un fonctionnement sur Ubuntu 24.04.</p>
+<p>Un guide pour l’installation est disponible dans la documentation officielle de
+<a class="reference external" href="https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html">ROS2 Jazzy</a>.</p>
+<p>Une fois ROS installé, le dépôt GitHub doit être cloné si cela n’est pas déjà fait.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Hermine-HRC/cdfr.git
+</pre></div>
 </div>
-<div class="section" id="fonctionnement-test">
-<h1><span class="section-number">1.1.2. </span>Fonctionnement test<a class="headerlink" href="#fonctionnement-test" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Ensuite, se rendre dans le dossier <code class="code docutils literal notranslate"><span class="pre">robot/ros_ws/</span></code>. Le fichier <code class="code docutils literal notranslate"><span class="pre">README.md</span></code> contient les instructions
+pour installer les dépendances.</p>
+<p>Le fichier contient les packages ROS à installer, la version de Gazebo à utiliser pour les simulations ainsi que
+divers utilitaires nécessaires au développement.</p>
+<p>La compilation du code peut être effectuée avec la commande suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>La compilation peut prendre plusieurs minutes.</p>
+</div>
+<p>Pour sourcer le workspace pour utiliser les packages créés :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>install/setup.bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="fonctionnement-code">
+<h1><span class="section-number">1.1.2. </span>Fonctionnement code<a class="headerlink" href="#fonctionnement-code" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Plusieurs packages ont été créés, chacun ayant un rôle différent, afin de répondre à différents besoins.
+Leur usage est détaillé respectivement dans les fichiers <code class="code docutils literal notranslate"><span class="pre">README.md</span></code> du dossier correspondant.</p>
+<p>Certains packages contiennent du code C++ et Python. Le code C++ est contenu dans les dossiers
+<code class="code docutils literal notranslate"><span class="pre">src/</span></code> et <code class="code docutils literal notranslate"><span class="pre">include/</span></code>. Le code Python quant à lui est contenu dans le dossier du même nom que le package.</p>
+<p>Le package <code class="code docutils literal notranslate"><span class="pre">bringup</span></code> contient les fichiers de launch regroupant tous les packages.</p>
+<div class="section" id="les-fichiers-erb">
+<h2><span class="section-number">1.1.2.1. </span>Les fichiers <em>.erb</em><a class="headerlink" href="#les-fichiers-erb" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Ces fichiers sont des templates ERB. Ils sont utilisés pour générer les fichiers de données à partir de code en Ruby.
+Ils permettent notamment de réaliser des boucles afin d’éviter de dupliquer des informations.
+Ils sont convertis en fichiers de données à la compilation suivant les règles données dans le ficher
+<code class="code docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.</p>
+</div>
+<div class="section" id="herminebot-ou-hrc">
+<h2><span class="section-number">1.1.2.2. </span>Herminebot ou HRC<a class="headerlink" href="#herminebot-ou-hrc" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Tous les packages sont préfixés <code class="code docutils literal notranslate"><span class="pre">herminebot_</span></code> ou <code class="code docutils literal notranslate"><span class="pre">hrc_</span></code>.
+Ceux qui commencent par <code class="code docutils literal notranslate"><span class="pre">hrc_</span></code> sont des packages qui ont pour vocation d’être utilisés en tant que bibliothèque
+alors que ceux qui commencent par <code class="code docutils literal notranslate"><span class="pre">herminebot_</span></code> sont des packages qui ont pour vocation d’être utilisés
+pour le fonctionnement de l’herminebot.</p>
+</div>
+</div>
+<div class="section" id="fonctionnement-tests">
+<h1><span class="section-number">1.1.3. </span>Fonctionnement tests<a class="headerlink" href="#fonctionnement-tests" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Les tests permettent de vérifier que le code est correct et qu’il respecte les conventions de programmation.
+Ils sont contenus dans le dossier <code class="code docutils literal notranslate"><span class="pre">test/</span></code> de chaque package.</p>
+<p>Les frameworks utilisés sont :</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">ament_cmake_pytest</span></code> pour le code Python</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ament_cmake_gtest</span></code> pour le code C++</p></li>
+</ul>
+<p>Des linters sont utilisés afin de vérifier que le code respecte les conventions de programmation :</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">flake8</span></code> et <code class="code docutils literal notranslate"><span class="pre">pep257</span></code> pour le code Python</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">uncrustify</span></code> pour le code C++</p></li>
+</ul>
+<p>Les règles sont détaillées dans la partie <a class="reference internal" href="Tree-Code_conventions.html"><span class="doc">Conventions de programmation</span></a>.</p>
+<div class="section" id="executer-les-tests">
+<h2><span class="section-number">1.1.3.1. </span>Exécuter les tests<a class="headerlink" href="#executer-les-tests" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Pour exécuter les tests, il faut d’abord compiler le code puis exécuter les tests.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build
+colcon<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<p>Les tests ne mettent que quelques secondes à exécuter.</p>
+<p>Les détails des tests peuvent être affichés avec la commande suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>test-result<span class="w"> </span>--all<span class="w"> </span>--verbose
+</pre></div>
+</div>
+</div>
+<div class="section" id="execution-sur-github">
+<h2><span class="section-number">1.1.3.2. </span>Exécution sur GitHub<a class="headerlink" href="#execution-sur-github" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Les tests sont exécutés sur GitHub, afin de vérifier que le code est correct et qu’il respecte les conventions de
+programmation, à chaque <em>push</em> sur la branche <code class="code docutils literal notranslate"><span class="pre">master</span></code> ou dans une <em>pull request</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Il faut plus de 10 minutes pour exécuter les tests sur GitHub car toute l’installation puis la compilation
+sont réalisées.</p>
+</div>
+<p>Si les tests échouent, il faut vérifier en local si ça échoue aussi et la cas échéant corriger le code.
+Si en local les tests passent, c’est parce que les tests échouent parfois de manière intermittente. Dans ce cas,
+il faut relancer les tests.</p>
+</div>
 </div>
 
 
