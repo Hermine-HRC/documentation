@@ -1,0 +1,15 @@
+# Ignore hidden files
+.*
+!.gitignore
+!.github/
+
+# Ignore python generated files
+*.pyc
+__pycache__
+
+# Ignore virtual environment
+venv/
+env/
+
+# Ignore sphinx build
+_build/
