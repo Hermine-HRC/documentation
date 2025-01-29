@@ -115,14 +115,9 @@ except ImportError:
 else:
     html_theme = "sphinx_rtd_theme"
     html_theme_options = {
-        'canonical_url': '',
-        'analytics_id': 'G-EVD5Z6G6NH',
         'logo_only': False,
-        'prev_next_buttons_location': 'None',
         # Toc options
         'collapse_navigation': False,
-        'sticky_navigation': True,
-        'navigation_depth': 4,
     }
 
 html_theme_path = ['_themes']
