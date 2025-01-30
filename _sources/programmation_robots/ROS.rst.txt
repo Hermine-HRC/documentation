@@ -28,7 +28,7 @@ La compilation du code peut être effectuée avec la commande suivante :
 
    La compilation peut prendre plusieurs minutes.
 
-Pour sourcer le workspace pour utiliser les packages créés :
+Il faut sourcer le workspace pour utiliser les packages créés à l'aide de la commande suivante :
 
 .. code-block:: bash
 
@@ -72,7 +72,8 @@ Les frameworks utilisés sont :
 - :code:`ament_cmake_pytest` pour le code Python
 - :code:`ament_cmake_gtest` pour le code C++
 
-Des linters sont utilisés afin de vérifier que le code respecte les conventions de programmation :
+Des *linters*, logiciels qui vérifient la forme du code, sont utilisés afin de vérifier que le code respecte les
+conventions de programmation :
 
 - :code:`flake8` et :code:`pep257` pour le code Python
 - :code:`uncrustify` pour le code C++
@@ -89,7 +90,7 @@ Pour exécuter les tests, il faut d'abord compiler le code puis exécuter les te
    colcon build
    colcon test
 
-Les tests ne mettent que quelques secondes à exécuter.
+Les tests ne mettent que quelques secondes à s'exécuter.
 
 Les détails des tests peuvent être affichés avec la commande suivante :
 

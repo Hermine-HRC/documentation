@@ -26,7 +26,7 @@ Pour fusionner les modifications, il faut faire une *pull request* sur le dépô
 .. note::
 
    La branche :code:`master` est la branche par défaut et elle est protégée. C'est-à-dire que les modifications ne
-   peuvent pas petre faites sur cette branche. Il faut procéder à une *pull request* afin de fusionner les
+   peuvent pas être faites sur cette branche. Il faut procéder à une *pull request* afin de fusionner les
    modifications.
 
 Exemple de workflow

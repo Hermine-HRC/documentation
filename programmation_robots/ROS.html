@@ -150,7 +150,7 @@ divers utilitaires nécessaires au développement.</p>
 <p class="admonition-title">Avertissement</p>
 <p>La compilation peut prendre plusieurs minutes.</p>
 </div>
-<p>Pour sourcer le workspace pour utiliser les packages créés :</p>
+<p>Il faut sourcer le workspace pour utiliser les packages créés à l’aide de la commande suivante :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </pre></div>
 </div>
@@ -186,7 +186,8 @@ Ils sont contenus dans le dossier <code class="code docutils literal notranslate
 <li><p><code class="code docutils literal notranslate"><span class="pre">ament_cmake_pytest</span></code> pour le code Python</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">ament_cmake_gtest</span></code> pour le code C++</p></li>
 </ul>
-<p>Des linters sont utilisés afin de vérifier que le code respecte les conventions de programmation :</p>
+<p>Des <em>linters</em>, logiciels qui vérifient la forme du code, sont utilisés afin de vérifier que le code respecte les
+conventions de programmation :</p>
 <ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">flake8</span></code> et <code class="code docutils literal notranslate"><span class="pre">pep257</span></code> pour le code Python</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">uncrustify</span></code> pour le code C++</p></li>
@@ -199,7 +200,7 @@ Ils sont contenus dans le dossier <code class="code docutils literal notranslate
 colcon<span class="w"> </span><span class="nb">test</span>
 </pre></div>
 </div>
-<p>Les tests ne mettent que quelques secondes à exécuter.</p>
+<p>Les tests ne mettent que quelques secondes à s’exécuter.</p>
 <p>Les détails des tests peuvent être affichés avec la commande suivante :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>test-result<span class="w"> </span>--all<span class="w"> </span>--verbose
 </pre></div>

@@ -54,7 +54,7 @@ Commun
 - Les variables globales sont en :code:`ALL_CAPS`
 - Les tabulations sont de 4 espaces (exception des packages copiés de nav2 ou elles sont de 2 espaces)
 - Les fonctions et méthodes sont documentées avec des docstrings
-- Tous les opérateurs arithmétiques et d'assignation sont entourés d'espaces (ex: :code:`x = x + 1`)
+- Tous les opérateurs arithmétiques et d'assignation sont entourés d'espaces (ex : :code:`x = x + 1`)
 - Il est inutile de mettre des commentaires à tout bout de champ car ça alourdit le code. Ils doivent être utilisés de manière pertinente
 - Les lignes de code sont limitées à 120 caractères (exception pour les packages copiés de nav2 où elles sont de 100)
 
