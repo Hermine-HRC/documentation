@@ -70,14 +70,26 @@
 <li class="toctree-l3"><a class="reference internal" href="#fonctionnement-tests">1.1.3. Fonctionnement tests</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#executer-les-tests">1.1.3.1. Exécuter les tests</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#execution-sur-github">1.1.3.2. Exécution sur GitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests-a-ajouter">1.1.3.3. Tests à ajouter</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Tree-Code_conventions.html">1.2. Conventions de programmation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Code_conventions.html">1.2.1. Communs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Code_conventions.html#c">1.2.2. C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Code_conventions.html#python">1.2.3. Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Code_conventions.html">1.2.1. Messages de commit et PR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Code_conventions.html#langages-de-programmation">1.2.2. Langages de programmation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Code_conventions.html#commun">1.2.2.1. Commun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Code_conventions.html#c">1.2.2.2. C++</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Code_conventions.html#python">1.2.2.3. Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tree-Git_GitHub.html">1.3. Git et GitHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Git_GitHub.html">1.3.1. Principe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git_GitHub.html#exemple-de-workflow">1.3.2. Exemple de workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git_GitHub.html#github-actions">1.3.3. GitHub Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git_GitHub.html#commandes-git-utiles">1.3.4. Commandes Git utiles</a></li>
 </ul>
 </li>
 </ul>
@@ -192,6 +204,10 @@ colcon<span class="w"> </span><span class="nb">test</span>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>test-result<span class="w"> </span>--all<span class="w"> </span>--verbose
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour toutes les erreurs de linter, il suffit de corriger de la façon qui est proposée (sauf cas exceptionnel).</p>
+</div>
 </div>
 <div class="section" id="execution-sur-github">
 <h2><span class="section-number">1.1.3.2. </span>Exécution sur GitHub<a class="headerlink" href="#execution-sur-github" title="Lien permanent vers cette rubrique"></a></h2>
@@ -205,6 +221,145 @@ sont réalisées.</p>
 <p>Si les tests échouent, il faut vérifier en local si ça échoue aussi et la cas échéant corriger le code.
 Si en local les tests passent, c’est parce que les tests échouent parfois de manière intermittente. Dans ce cas,
 il faut relancer les tests.</p>
+<p>Une fois que les tests sont passés, une couverture de code est générée. Le rapport est accessible sur le site
+<a class="reference external" href="https://app.codecov.io/github/Hermine-HRC/cdfr">codecov</a> ou en cliquant sur le badge <code class="code docutils literal notranslate"><span class="pre">codecov</span></code>
+dans le <em>README</em>.</p>
+</div>
+<div class="section" id="tests-a-ajouter">
+<h2><span class="section-number">1.1.3.3. </span>Tests à ajouter<a class="headerlink" href="#tests-a-ajouter" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Autant que possible, il faut ajouter des tests afin de vérifier que le code fonctionne correctement.
+Soit avec le framework <code class="code docutils literal notranslate"><span class="pre">gtest</span></code> pour les tests C++ ou avec <code class="code docutils literal notranslate"><span class="pre">pytest</span></code> pour les tests Python.</p>
+<p>À ça s’ajoute aussi des tests pour vérifier que le code est conforme aux conventions de programmation.</p>
+<div class="section" id="c">
+<h3><span class="section-number">1.1.3.3.1. </span>C++<a class="headerlink" href="#c" title="Lien permanent vers cette rubrique"></a></h3>
+<p>test_foo.cpp</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gtest/gtest.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;foo.hpp&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Tester</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">Tester</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="n">foo_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">();}</span>
+<span class="k">protected</span><span class="o">:</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">foo_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">TEST</span><span class="p">(</span><span class="n">Tester</span><span class="p">,</span><span class="w"> </span><span class="n">test_foo</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ASSERT_EQ</span><span class="p">(</span><span class="n">foo_</span><span class="o">-&gt;</span><span class="n">baz</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize the system</span>
+<span class="w">    </span><span class="n">testing</span><span class="o">::</span><span class="n">InitGoogleTest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Actual testing</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">test_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUN_ALL_TESTS</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// Shutdown</span>
+<span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">shutdown</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">test_result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>test_uncrustify.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ament_index_python.packages</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_package_share_directory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ament_uncrustify.main</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">linter</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_uncrustify</span><span class="p">():</span>
+    <span class="n">cfg_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_package_share_directory</span><span class="p">(</span><span class="s2">&quot;herminebot_bringup&quot;</span><span class="p">),</span> <span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="s2">&quot;ament_code_style.cfg&quot;</span><span class="p">)</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;-c</span><span class="si">{</span><span class="n">cfg_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Found uncrustify errors&quot;</span>
+</pre></div>
+</div>
+<p>CMakeLists.txt</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">ament_add_gtest</span><span class="p">(</span><span class="s">test_foo</span><span class="w"> </span><span class="s">test_foo.cpp</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">test_foo</span>
+<span class="w">    </span><span class="s">foo_lib</span>
+<span class="p">)</span>
+
+<span class="nb">set</span><span class="p">(</span><span class="s">python_tests</span>
+<span class="w">    </span><span class="s">test_uncrustify.py</span>
+<span class="p">)</span>
+<span class="nb">foreach</span><span class="p">(</span><span class="s">python_test</span><span class="w"> </span><span class="o">${</span><span class="nv">python_tests</span><span class="o">}</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">string</span><span class="p">(</span><span class="s">REPLACE</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="s2">&quot;_&quot;</span><span class="w"> </span><span class="s">python_test_name</span><span class="w"> </span><span class="o">${</span><span class="nv">python_test</span><span class="o">}</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">ament_add_pytest_test</span><span class="p">(</span><span class="o">${</span><span class="nv">python_test_name</span><span class="o">}</span><span class="w"> </span><span class="o">${</span><span class="nv">python_test</span><span class="o">}</span>
+<span class="w">        </span><span class="s">APPEND_ENV</span><span class="w"> </span><span class="s">PYTHONPATH=</span><span class="o">${</span><span class="nv">CMAKE_CURRENT_BINARY_DIR</span><span class="o">}</span>
+<span class="w">        </span><span class="s">TIMEOUT</span><span class="w"> </span><span class="s">60</span>
+<span class="w">        </span><span class="s">WORKING_DIRECTORY</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_SOURCE_DIR</span><span class="o">}</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="nb">endforeach</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python">
+<h3><span class="section-number">1.1.3.3.2. </span>Python<a class="headerlink" href="#python" title="Lien permanent vers cette rubrique"></a></h3>
+<p>test_foo.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">foo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rclpy</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_demo</span><span class="p">():</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">foo</span><span class="o">.</span><span class="n">Foo</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">node</span><span class="o">.</span><span class="n">baz</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">pytest</span><span class="o">.</span><span class="n">main</span><span class="p">([</span><span class="s1">&#39;-v&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>test_flake8.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ament_flake8.main</span><span class="w"> </span><span class="kn">import</span> <span class="n">main_with_errors</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">flake8</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">linter</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_flake8</span><span class="p">():</span>
+    <span class="n">rc</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="n">main_with_errors</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;--linelength=120&#39;</span><span class="p">,</span> <span class="s1">&#39;--exclude=$pkg_name$/__init__.py&#39;</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> \
+        <span class="s1">&#39;Found </span><span class="si">%d</span><span class="s1"> code style errors / warnings:</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span> <span class="o">+</span> \
+        <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>test_pep257.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ament_pep257.main</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">linter</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">pep257</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_pep257</span><span class="p">():</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Found code style errors / warnings&#39;</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Si le code se situe dans un package cmake, il faut modifier le fichier <code class="code docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> pour ajouter les tests.</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="s">python_tests</span>
+<span class="w">    </span><span class="s">test_foo.py</span>
+<span class="w">    </span><span class="s">test_flake8.py</span>
+<span class="w">    </span><span class="s">test_pep257.py</span>
+<span class="p">)</span>
+<span class="nb">foreach</span><span class="p">(</span><span class="s">python_test</span><span class="w"> </span><span class="o">${</span><span class="nv">python_tests</span><span class="o">}</span><span class="p">)</span>
+<span class="w">   </span><span class="nb">ament_add_pytest_test</span><span class="p">(</span><span class="o">${</span><span class="nv">python_test</span><span class="o">}</span><span class="w"> </span><span class="o">${</span><span class="nv">python_test</span><span class="o">}</span>
+<span class="w">       </span><span class="s">APPEND_ENV</span><span class="w"> </span><span class="s">PYTHONPATH=</span><span class="o">${</span><span class="nv">CMAKE_CURRENT_BINARY_DIR</span><span class="o">}</span>
+<span class="w">       </span><span class="s">TIMEOUT</span><span class="w"> </span><span class="s">60</span>
+<span class="w">       </span><span class="s">WORKING_DIRECTORY</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_SOURCE_DIR</span><span class="o">}</span>
+<span class="w">   </span><span class="p">)</span>
+<span class="nb">endforeach</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 

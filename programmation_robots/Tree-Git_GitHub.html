@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1.1. Programmation ROS &mdash; Documentation HRC Documentation 1.0.0</title>
+  <title>1.3. Git et GitHub &mdash; Documentation HRC Documentation 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -27,8 +27,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="1.1.1. Installation" href="ROS.html" />
-    <link rel="prev" title="1. Programmation Robots" href="Tree.html" />
+    <link rel="next" title="1.3.1. Principe" href="Git_GitHub.html" />
+    <link rel="prev" title="1.2.1. Messages de commit et PR" href="Code_conventions.html" />
 
 <link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
 
@@ -60,7 +60,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="Tree.html">1. Programmation Robots</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1. Programmation ROS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Tree-ROS.html">1.1. Programmation ROS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ROS.html">1.1.1. Installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ROS.html#fonctionnement-code">1.1.2. Fonctionnement code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="ROS.html#les-fichiers-erb">1.1.2.1. Les fichiers <em>.erb</em></a></li>
@@ -85,7 +85,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Tree-Git_GitHub.html">1.3. Git et GitHub</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.3. Git et GitHub</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Git_GitHub.html">1.3.1. Principe</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Git_GitHub.html#exemple-de-workflow">1.3.2. Exemple de workflow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Git_GitHub.html#github-actions">1.3.3. GitHub Actions</a></li>
@@ -119,7 +119,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="Tree.html"><span class="section-number">1. </span>Programmation Robots</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">1.1. </span>Programmation ROS</li>
+      <li class="breadcrumb-item active"><span class="section-number">1.3. </span>Git et GitHub</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -128,29 +128,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="programmation-ros">
-<h1><span class="section-number">1.1. </span>Programmation ROS<a class="headerlink" href="#programmation-ros" title="Lien permanent vers cette rubrique"></a></h1>
-<p>Ici est détaillé tout ce qui concerne le code ROS du robot (Herminebot).</p>
-<p>Plusieurs choses ont été mises en place afin d’avoir un code de qualité. Est notamment inclus l’exécution automatique
-de tests (dont linter) couplé avec un <em>code coverage</em> afin de connaitre quelles parties du code sont testées ou non.</p>
+  <div class="section" id="git-et-github">
+<h1><span class="section-number">1.3. </span>Git et GitHub<a class="headerlink" href="#git-et-github" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Le code source des robots est hébergé sur <a class="reference external" href="https://github.com/Hermine-HRC/cdfr/">GitHub</a>.</p>
+<p>Ici est détaillé le fonctionnement minimal de Git et GitHub afin de pouvoir travailler sur le code.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ROS.html">1.1.1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ROS.html#fonctionnement-code">1.1.2. Fonctionnement code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#les-fichiers-erb">1.1.2.1. Les fichiers <em>.erb</em></a></li>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#herminebot-ou-hrc">1.1.2.2. Herminebot ou HRC</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ROS.html#fonctionnement-tests">1.1.3. Fonctionnement tests</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#executer-les-tests">1.1.3.1. Exécuter les tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#execution-sur-github">1.1.3.2. Exécution sur GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#tests-a-ajouter">1.1.3.3. Tests à ajouter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ROS.html#c">1.1.3.3.1. C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ROS.html#python">1.1.3.3.2. Python</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="Git_GitHub.html">1.3.1. Principe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git_GitHub.html#exemple-de-workflow">1.3.2. Exemple de workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git_GitHub.html#github-actions">1.3.3. GitHub Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git_GitHub.html#commandes-git-utiles">1.3.4. Commandes Git utiles</a></li>
 </ul>
 </div>
 </div>
@@ -159,8 +146,8 @@ de tests (dont linter) couplé avec un <em>code coverage</em> afin de connaitre 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="Tree.html" class="btn btn-neutral float-left" title="1. Programmation Robots" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="ROS.html" class="btn btn-neutral float-right" title="1.1.1. Installation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Code_conventions.html" class="btn btn-neutral float-left" title="1.2.1. Messages de commit et PR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Git_GitHub.html" class="btn btn-neutral float-right" title="1.3.1. Principe" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
