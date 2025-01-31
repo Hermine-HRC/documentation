@@ -73,6 +73,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#tests-a-ajouter">1.1.3.3. Tests à ajouter</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#creer-des-plugins-nav2">1.1.4. Créer des plugins Nav2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#navigateur">1.1.4.1. Navigateur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plugin-d-arbre-de-comportement">1.1.4.2. Plugin d’arbre de comportement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#comportement">1.1.4.3. Comportement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ecrire-de-nouveaux-messages">1.1.5. Écrire de nouveaux messages</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Tree-Code_conventions.html">1.2. Conventions de programmation</a><ul>
@@ -131,9 +138,10 @@
              
   <div class="section" id="installation">
 <h1><span class="section-number">1.1.1. </span>Installation<a class="headerlink" href="#installation" title="Lien permanent vers cette rubrique"></a></h1>
-<p>La version de ROS utilisée est ROS2 Jazzy prévu pour un fonctionnement sur Ubuntu 24.04.</p>
-<p>Un guide pour l’installation est disponible dans la documentation officielle de
-<a class="reference external" href="https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html">ROS2 Jazzy</a>.</p>
+<p>La version de ROS utilisée est <a class="reference external" href="https://docs.ros.org/en/jazzy/index.html">ROS2 Jazzy</a> prévu pour un fonctionnement
+sur Ubuntu 24.04. Une grande partie du code utilise et est inspiré par <a class="reference external" href="https://docs.nav2.org">Nav2</a>.</p>
+<p>Un guide pest disponible dans la documentation officielle de
+<a class="reference external" href="https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html">ROS2 Jazzy pour l’installation</a>.</p>
 <p>Une fois ROS installé, le dépôt GitHub doit être cloné si cela n’est pas déjà fait.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Hermine-HRC/cdfr.git
 </pre></div>
@@ -162,6 +170,9 @@ Leur usage est détaillé respectivement dans les fichiers <code class="code doc
 <p>Certains packages contiennent du code C++ et Python. Le code C++ est contenu dans les dossiers
 <code class="code docutils literal notranslate"><span class="pre">src/</span></code> et <code class="code docutils literal notranslate"><span class="pre">include/</span></code>. Le code Python quant à lui est contenu dans le dossier du même nom que le package.</p>
 <p>Le package <code class="code docutils literal notranslate"><span class="pre">bringup</span></code> contient les fichiers de launch regroupant tous les packages.</p>
+<p>Les nœuds peuvent tous être configurés via un fichier de configuration au format YAML. Par conséquent, il est préférable
+d’utiliser un fichier de configuration pour les paramètres de nœuds plutôt que mettre ces paramètres en brut dans le
+code.</p>
 <div class="section" id="les-fichiers-erb">
 <h2><span class="section-number">1.1.2.1. </span>Les fichiers <em>.erb</em><a class="headerlink" href="#les-fichiers-erb" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Ces fichiers sont des templates ERB. Ils sont utilisés pour générer les fichiers de données à partir de code en Ruby.
@@ -362,6 +373,50 @@ Soit avec le framework <code class="code docutils literal notranslate"><span cla
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="creer-des-plugins-nav2">
+<h1><span class="section-number">1.1.4. </span>Créer des plugins Nav2<a class="headerlink" href="#creer-des-plugins-nav2" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Nav2 est la base du projet. La stack est utilisée pour permettre au robot de se déplacer de manière autonome.
+Des plugins ont été écrits et continueront d’être écrits afin de s’adapter au cas d’utilisation.</p>
+<p>Dans les sous parties suivantes est décrit le cas d’utilisation des principaux plugins qui devraient être écrits
+pour répondre aux besoins. Pour les autres, se rendre dans la documentation officielle de Nav2.</p>
+<p>Ceux plugins qui vont être cités sont des <a class="reference external" href="https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Actions/Understanding-ROS2-Actions.html">actions dans le sens de ROS</a>.</p>
+<div class="section" id="navigateur">
+<h2><span class="section-number">1.1.4.1. </span>Navigateur<a class="headerlink" href="#navigateur" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Le navigateur est un plugin de Nav2 qui permet de faire interface entre une action et un arbre de comportement.
+Un arbre de comportement  définit les différentes actions possibles et leur priorités afin de réaliser une action
+plus globale. Par exemple, c’est un arbre de comportement qui permet au robot de se déplacer en générant via un planner
+dans un premier temps le parcours à parcourir puis fait suivre le parcours via un contrôleur.</p>
+<p>Un navigateur est un plugin qui est géré par le nœud <code class="code docutils literal notranslate"><span class="pre">bt_navigator</span></code>.</p>
+<p>Pour créer un nouveau navigateur, suivre le
+<a class="reference external" href="https://docs.nav2.org/plugin_tutorials/docs/writing_new_navigator_plugin.html">tutoriel de Nav2 sur les navigateurs</a>.</p>
+</div>
+<div class="section" id="plugin-d-arbre-de-comportement">
+<h2><span class="section-number">1.1.4.2. </span>Plugin d’arbre de comportement<a class="headerlink" href="#plugin-d-arbre-de-comportement" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Un plugin d’arbre de comportement est un plugin qui fait le lien entre un composant d’arbre de comportement et une
+action. C’est notamment le plugin qui va lancer l’action de génération de chemin.</p>
+<p>Pour créer un nouveau plugin d’arbre de comportement, suivre le <a class="reference external" href="https://docs.nav2.org/plugin_tutorials/docs/writing_new_bt_plugin.html">tutoriel de Nav2 sur les arbres de comportement</a>.</p>
+</div>
+<div class="section" id="comportement">
+<h2><span class="section-number">1.1.4.3. </span>Comportement<a class="headerlink" href="#comportement" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Un comportement est un plugin qui fait va exécuter une action. Il peut être appelé depuis un arbre de comportement ou
+depuis un appel d’action. La génération de chemin est un exemple d’action qui est exécuté par un comportement.</p>
+<p>Un comportement est géré par le nœud <code class="code docutils literal notranslate"><span class="pre">behavior_server</span></code>.</p>
+<p>Pour créer un nouveau comportement, suivre le
+<a class="reference external" href="https://docs.nav2.org/plugin_tutorials/docs/writing_new_behavior_plugin.html">tutoriel de Nav2 sur les comportements</a>.</p>
+</div>
+</div>
+<div class="section" id="ecrire-de-nouveaux-messages">
+<h1><span class="section-number">1.1.5. </span>Écrire de nouveaux messages<a class="headerlink" href="#ecrire-de-nouveaux-messages" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Les messages sont des structures de données qui sont utilisés pour communiquer entre les nœuds. Ils sont de 3 types :</p>
+<ul class="simple">
+<li><p>actions</p></li>
+<li><p>services</p></li>
+<li><p>messages</p></li>
+</ul>
+<p>Pour plus d’informations, se rendre dans la documentation officielle de ROS2 qui explique le <a class="reference external" href="https://docs.ros.org/en/jazzy/Concepts/Basic/About-Interfaces.html">concept des interfaces</a>.</p>
+<p>Dans le projet, les messages créés le sont dans le package <code class="code docutils literal notranslate"><span class="pre">hrc_interfaces</span></code>.</p>
+<p>Pour créer un nouveau message, se référer au <a class="reference external" href="https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html">tutoriel sur les messages</a> de ROS2.</p>
 </div>
 
 

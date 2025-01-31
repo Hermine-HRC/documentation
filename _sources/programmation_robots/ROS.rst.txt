@@ -1,10 +1,11 @@
 Installation
 ============
 
-La version de ROS utilisée est ROS2 Jazzy prévu pour un fonctionnement sur Ubuntu 24.04.
+La version de ROS utilisée est `ROS2 Jazzy <https://docs.ros.org/en/jazzy/index.html>`_ prévu pour un fonctionnement
+sur Ubuntu 24.04. Une grande partie du code utilise et est inspiré par `Nav2 <https://docs.nav2.org>`_.
 
-Un guide pour l'installation est disponible dans la documentation officielle de
-`ROS2 Jazzy <https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html>`_.
+Un guide pest disponible dans la documentation officielle de
+`ROS2 Jazzy pour l'installation <https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html>`_.
 
 Une fois ROS installé, le dépôt GitHub doit être cloné si cela n'est pas déjà fait.
 
@@ -44,6 +45,10 @@ Certains packages contiennent du code C++ et Python. Le code C++ est contenu dan
 :code:`src/` et :code:`include/`. Le code Python quant à lui est contenu dans le dossier du même nom que le package.
 
 Le package :code:`bringup` contient les fichiers de launch regroupant tous les packages.
+
+Les nœuds peuvent tous être configurés via un fichier de configuration au format YAML. Par conséquent, il est préférable
+d'utiliser un fichier de configuration pour les paramètres de nœuds plutôt que mettre ces paramètres en brut dans le
+code.
 
 Les fichiers *.erb*
 -------------------
@@ -272,3 +277,65 @@ test_pep257.py
              WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
          )
       endforeach()
+
+Créer des plugins Nav2
+======================
+
+Nav2 est la base du projet. La stack est utilisée pour permettre au robot de se déplacer de manière autonome.
+Des plugins ont été écrits et continueront d'être écrits afin de s'adapter au cas d'utilisation.
+
+Dans les sous parties suivantes est décrit le cas d'utilisation des principaux plugins qui devraient être écrits
+pour répondre aux besoins. Pour les autres, se rendre dans la documentation officielle de Nav2.
+
+Ceux plugins qui vont être cités sont des `actions dans le sens de ROS
+<https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Actions/Understanding-ROS2-Actions.html>`_.
+
+Navigateur
+----------
+
+Le navigateur est un plugin de Nav2 qui permet de faire interface entre une action et un arbre de comportement.
+Un arbre de comportement  définit les différentes actions possibles et leur priorités afin de réaliser une action
+plus globale. Par exemple, c'est un arbre de comportement qui permet au robot de se déplacer en générant via un planner
+dans un premier temps le parcours à parcourir puis fait suivre le parcours via un contrôleur.
+
+Un navigateur est un plugin qui est géré par le nœud :code:`bt_navigator`.
+
+Pour créer un nouveau navigateur, suivre le
+`tutoriel de Nav2 sur les navigateurs <https://docs.nav2.org/plugin_tutorials/docs/writing_new_navigator_plugin.html>`_.
+
+Plugin d'arbre de comportement
+------------------------------
+
+Un plugin d'arbre de comportement est un plugin qui fait le lien entre un composant d'arbre de comportement et une
+action. C'est notamment le plugin qui va lancer l'action de génération de chemin.
+
+Pour créer un nouveau plugin d'arbre de comportement, suivre le `tutoriel de Nav2 sur les arbres de comportement
+<https://docs.nav2.org/plugin_tutorials/docs/writing_new_bt_plugin.html>`_.
+
+Comportement
+------------
+
+Un comportement est un plugin qui fait va exécuter une action. Il peut être appelé depuis un arbre de comportement ou
+depuis un appel d'action. La génération de chemin est un exemple d'action qui est exécuté par un comportement.
+
+Un comportement est géré par le nœud :code:`behavior_server`.
+
+Pour créer un nouveau comportement, suivre le
+`tutoriel de Nav2 sur les comportements <https://docs.nav2.org/plugin_tutorials/docs/writing_new_behavior_plugin.html>`_.
+
+Écrire de nouveaux messages
+===========================
+
+Les messages sont des structures de données qui sont utilisés pour communiquer entre les nœuds. Ils sont de 3 types :
+
+- actions
+- services
+- messages
+
+Pour plus d'informations, se rendre dans la documentation officielle de ROS2 qui explique le `concept des interfaces
+<https://docs.ros.org/en/jazzy/Concepts/Basic/About-Interfaces.html>`_.
+
+Dans le projet, les messages créés le sont dans le package :code:`hrc_interfaces`.
+
+Pour créer un nouveau message, se référer au `tutoriel sur les messages
+<https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html>`_ de ROS2.
