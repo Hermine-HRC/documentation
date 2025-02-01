@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.2.1. KiCad &mdash; Documentation HRC Documentation 1.0.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/logo_48x48.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="3. Électronique" href="../Electronique/Tree.html" />
+    <link rel="prev" title="2.2. KiCad" href="Tree-KiCad.html" />
+
+<link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            HRC Documentation
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../programmation_robots/Tree.html">1. Programmation Robots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programmation_robots/Tree-ROS.html">1.1. Programmation ROS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html">1.1.1. Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#fonctionnement-code">1.1.2. Fonctionnement code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#les-fichiers-erb">1.1.2.1. Les fichiers <em>.erb</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#herminebot-ou-hrc">1.1.2.2. Herminebot ou HRC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#fonctionnement-tests">1.1.3. Fonctionnement tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#executer-les-tests">1.1.3.1. Exécuter les tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#execution-sur-github">1.1.3.2. Exécution sur GitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#tests-a-ajouter">1.1.3.3. Tests à ajouter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#creer-des-plugins-nav2">1.1.4. Créer des plugins Nav2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#navigateur">1.1.4.1. Navigateur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#plugin-d-arbre-de-comportement">1.1.4.2. Plugin d’arbre de comportement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#comportement">1.1.4.3. Comportement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#ecrire-de-nouveaux-messages">1.1.5. Écrire de nouveaux messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programmation_robots/Tree-Code_conventions.html">1.2. Conventions de programmation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Code_conventions.html">1.2.1. Messages de commit et PR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Code_conventions.html#langages-de-programmation">1.2.2. Langages de programmation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/Code_conventions.html#commun">1.2.2.1. Commun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/Code_conventions.html#c">1.2.2.2. C++</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/Code_conventions.html#python">1.2.2.3. Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programmation_robots/Tree-Git_GitHub.html">1.3. Git et GitHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html">1.3.1. Principe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html#exemple-de-workflow">1.3.2. Exemple de workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html#github-actions">1.3.3. GitHub Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html#commandes-git-utiles">1.3.4. Commandes Git utiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="Tree.html">2. CAO</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Tree-Solidworks.html">2.1. Solidworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Solidworks.html">2.1.1. Solidworks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Solidworks.html#ajout-pour-le-crubs">2.1.2. Ajout pour le CRUBS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Solidworks.html#volet-d-infos">2.1.2.1. Volet d’infos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Solidworks.html#bibliotheques">2.1.2.2. Bibliotheques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Solidworks.html#macros">2.1.2.3. Macros</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Solidworks.html#feuille-de-plans">2.1.2.4. Feuille de plans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Solidworks.html#materiaux">2.1.2.5. Materiaux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="Tree-KiCad.html">2.2. KiCad</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.2.1. KiCad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#le-circuit">2.2.1.1. Le circuit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nouveau-projet-kicad">2.2.1.2. Nouveau projet kicad</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#editeur-de-schematique">2.2.2. Editeur de Schematique</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#etape-1-premier-composant">2.2.2.1. Etape 1 - premier composant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-2-editeur-de-symbole">2.2.2.2. Etape 2 - Editeur de symbole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-3-finalisation-schemat">2.2.2.3. Etape 3 - finalisation schemat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-4-editeur-d-empreinte">2.2.2.4. Etape 4 - Editeur d’empreinte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-5-passage-dans-l-editeur-de-kicad">2.2.2.5. Etape 5 - Passage dans l’editeur de Kicad</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#editeur-de-pcb-kicad">2.2.3. Editeur de PCB KiCad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#etape-6-importer-les-empreinte">2.2.3.1. Etape 6 - Importer les empreinte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-7-bordure">2.2.3.2. Etape 7 - Bordure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-8-le-plan-de-masse">2.2.3.3. Etape 8 - Le plan de masse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-9-tracer-les-piste">2.2.3.4. Etape 9 - Tracer les piste</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-10-via">2.2.3.5. Etape 10 - Via</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-11-verification">2.2.3.6. Etape 11 - Verification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-12-encrage">2.2.3.7. Etape 12 - Encrage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-13-visualisation">2.2.3.8. Etape 13 - Visualisation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fabrication-du-pcb">2.2.4. Fabrication du PCB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#etape-14-exporter-les-fichier-de-fabrication">2.2.4.1. Etape 14 - Exporter les fichier de fabrication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jlcpcb">2.2.4.2. JLCPCB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#aide">2.2.5. Aide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#raccourcis-clavier">2.2.5.1. Raccourcis clavier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#composant">2.2.5.2. Composant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#taille-de-piste-predefinis">2.2.5.3. Taille de piste prédéfinis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Electronique/Tree.html">3. Électronique</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Lois.html">3.1. Lois</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html">3.1.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#loi-d-ohm">3.1.2. Loi d’Ohm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#loi-des-mailles">3.1.3. Loi des mailles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#loi-des-noeuds">3.1.4. Loi des nœuds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#pont-diviseur-de-tension">3.1.5. Pont diviseur de tension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#resistances-en-serie">3.1.6. Résistances en série</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#resistances-en-parallele">3.1.7. Résistances en parallèle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#theoreme-de-millman">3.1.8. Théorème de Millman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#puissance">3.1.9. Puissance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#tension-efficace">3.1.10. Tension efficace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#autres-theoremes">3.1.11. Autres théorèmes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Composants.html">3.2. Composants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html">3.2.1. Résistances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#condensateurs">3.2.2. Condensateurs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#bobines">3.2.3. Bobines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#transistors-mosfets">3.2.4. Transistors &amp; Mosfets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Composants.html#transistor">3.2.4.1. Transistor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Composants.html#mosfet">3.2.4.2. Mosfet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#regulateur-lineaire">3.2.5. Régulateur linéaire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#regulateur-hacheur">3.2.6. Régulateur hacheur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#amplificateur-operationnel">3.2.7. Amplificateur opérationnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#diode">3.2.8. Diode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Filtres.html">3.3. Filtres</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Filtres.html">3.3.1. Filtre passe-bas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Filtres.html#fonction-de-transfert-du-premier-ordre">3.3.1.1. Fonction de transfert du premier ordre</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Filtres.html#filtre-rc-passif">3.3.1.2. Filtre RC passif</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Filtres.html#filtre-actif">3.3.1.3. Filtre actif</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Motorisation.html">3.4. Motorisation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Motorisation.html">3.4.1. Motorisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Bus_communications.html">3.5. Bus &amp; communications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Bus_communications.html">3.5.1. Bus &amp; communications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Informatique_Programmation/Tree.html">4. Programmation et Informatique</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Informatique_Programmation/Tree-Doc_sphinx.html">4.1. Doc Sphinx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html">4.1.1. Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#editer-la-documentation">4.1.1.1. Éditer la documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#commencement">4.1.2. Commencement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#installation">4.1.2.1. Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#generation">4.1.2.2. Génération</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#toctree-index-et-ordonnancement-des-fichiers">4.1.2.3. Toctree, index et ordonnancement des fichiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#compilation">4.1.2.4. Compilation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#generalites">4.1.3. Généralités</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#titres">4.1.3.1. Titres</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#format-de-texte">4.1.3.2. Format de texte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#liste-et-enumeration">4.1.3.3. Liste et énumération</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#tableaux">4.1.3.4. Tableaux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#notes">4.1.3.5. Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#warnings">4.1.3.6. Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#astuces">4.1.3.7. Astuces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#dangers">4.1.3.8. Dangers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#ajout-de-medias">4.1.4. Ajout de médias</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#bloc-de-code">4.1.4.1. Bloc de code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#images">4.1.4.2. Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#hyperlien">4.1.4.3. Hyperlien</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Doc_sphinx.html#lien-dans-la-documentation">4.1.4.4. Lien dans la documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Informatique_Programmation/Tree-Raspberry_Pi.html">4.2. Raspberry PI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Raspberry_Pi.html">4.2.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Raspberry_Pi.html#demmarage">4.2.2. Démmarage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Raspberry_Pi.html#installation">4.2.2.1. Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Raspberry_Pi.html#mises-a-jour">4.2.2.2. Mises à jour</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Informatique_Programmation/Tree-Raspbian.html">4.3. Raspbian OS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Raspbian.html">4.3.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Raspbian.html#adresse-ip-statique">4.3.2. Adresse IP statique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Raspbian.html#hotspot-wifi">4.3.3. Hotspot WIFI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Raspbian.html#prerequis">4.3.3.1. Prerequis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Raspbian.html#adresse-ip-fixe-en-wifi">4.3.3.2. Adresse IP fixe en wifi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Raspbian.html#configuration-du-serveur-dhcp">4.3.3.3. Configuration du serveur DHCP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Raspbian.html#parametrage-du-reseau-wifi">4.3.3.4. Paramétrage du réseau wifi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Raspbian.html#test">4.3.3.5. Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Informatique_Programmation/Tree-Ubuntu.html">4.4. Ubuntu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html">4.4.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#hotspot-wifi-et-ip-fixes">4.4.2. Hotspot WIFI et IP fixes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#commandes-utiles">4.4.2.1. Commandes utiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#ssh">4.4.3. SSH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#wlan0">4.4.3.1. wlan0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#eth0">4.4.3.2. eth0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#depannage">4.4.3.3. Dépannage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#fixer-le-nom-des-ports-usb">4.4.4. Fixer le nom des ports USB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#autres-commandes">4.4.5. Autres commandes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#interface-graphique">4.4.5.1. Interface graphique</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#activation-des-interfaces-des-differents-bus">4.4.6. Activation des interfaces des différents bus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#i2c">4.4.6.1. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#spi">4.4.6.2. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Ubuntu.html#can">4.4.6.3. CAN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Informatique_Programmation/Tree-Arduino.html">4.5. Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Arduino.html">4.5.1. Arduino</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Arduino.html#liaison-serie">4.5.2. Liaison serie</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Arduino.html#cote-arduino">4.5.2.1. Cote arduino</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Arduino.html#cote-python">4.5.2.2. Cote python</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/Arduino.html#les-interuptions">4.5.3. Les interuptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Arduino.html#interruptions-sur-un-pin">4.5.3.1. interruptions sur un pin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Informatique_Programmation/Arduino.html#interruptions-sur-timer">4.5.3.2. interruptions sur timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Informatique_Programmation/Tree-ROS_Arduino.html">4.6. ROS-Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/ROS_Arduino.html">4.6.1. Installation et Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Informatique_Programmation/ROS_Arduino.html#lancement-d-une-liaison-serie-ros-arduino">4.6.2. Lancement d’une liaison serie ROS - Arduino</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HRC Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+
+<span style="float: right;" >
+    <a class="github-button" href="https://github.com/Hermine-HRC/documentation"
+       data-color-scheme="no-preference: light; light: light; dark: dark;"
+       data-size="large" aria-label="Éditer cette documentation sur GitHub" >Éditer</a>
+</span>
+
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Tree.html"><span class="section-number">2. </span>CAO</a></li>
+          <li class="breadcrumb-item"><a href="Tree-KiCad.html"><span class="section-number">2.2. </span>KiCad</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.2.1. </span>KiCad</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="kicad">
+<h1><span class="section-number">2.2.1. </span>KiCad<a class="headerlink" href="#kicad" title="Lien permanent vers cette rubrique"></a></h1>
+<p>KiCad est une suite logicielle libre de conception pour l’électronique pour le dessin de schémas électroniques et la conception de circuits imprimés.</p>
+<p>Cette page servira de tutoriel pour utiliser le logiciel KiCad V6.0 a travers un exemple. Vous y verrez :</p>
+<ol class="arabic simple">
+<li><p>Comment créer un projet</p></li>
+<li><p>Réaliser le schéma électrique</p></li>
+<li><p>Créer votre propre composant et son empreinte</p></li>
+<li><p>Router votre circuit</p></li>
+<li><p>Réaliser un plan de masse et des vias</p></li>
+<li><p>Faire fabriquer cette carte a l’école ou avec jlcpcb</p></li>
+</ol>
+<div class="section" id="le-circuit">
+<h2><span class="section-number">2.2.1.1. </span>Le circuit<a class="headerlink" href="#le-circuit" title="Lien permanent vers cette rubrique"></a></h2>
+<p>L’exemple que nous allons suivre est la réalisation d’une carte permettant d’indiquer au robot le choix de l’équipe. Nous y trouverons un interrupteur pour choisir l’équipe et deux leds qui permettent de savoir quelle équipe est sélectionnée. Nous retrouverons 3 pins, 2 pour l’alimentation de la carte (gnd et 3.3v) et 1 pour l’information de l’équipe (3.3v ou 0v), ce dernier pin sera relier directement a la raspberry pi ce qui explique le choix d’une alimentation en 3.3v.</p>
+<p>Je vous recommande de vérifier dans la mesure du possible votre circuit sous un simulateur tel que falstad (<a class="reference external" href="https://www.falstad.com/circuit/circuitjs.html">https://www.falstad.com/circuit/circuitjs.html</a>) pour vous assurer qu’il n’y a aucun problème.</p>
+<p>Voici le circuit que nous allons réaliser :</p>
+<a class="reference internal image-reference" href="../_images/circuit_falstad.png"><img alt="../_images/circuit_falstad.png" class="align-center" src="../_images/circuit_falstad.png" style="width: 875.5px; height: 473.5px;" /></a>
+</div>
+<div class="section" id="nouveau-projet-kicad">
+<h2><span class="section-number">2.2.1.2. </span>Nouveau projet kicad<a class="headerlink" href="#nouveau-projet-kicad" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Au démarrage de KiCad vous tomberez sur cette interface. On y retrouve tous les outils qui sont nécessaires a la création de notre pcb.</p>
+<a class="reference internal image-reference" href="../_images/kicad_menu.png"><img alt="../_images/kicad_menu.png" class="align-center" src="../_images/kicad_menu.png" style="width: 960.0px; height: 540.0px;" /></a>
+<p>Commencer par cliquer sur « créer un nouveau projet », donnez lui un nom puis sélectionner le chemin d’enregistrement.</p>
+<p>Notre projet est créé, nous pouvons maintenant rentrer dans l’éditeur de schématique.</p>
+</div>
+</div>
+<div class="section" id="editeur-de-schematique">
+<h1><span class="section-number">2.2.2. </span>Editeur de Schematique<a class="headerlink" href="#editeur-de-schematique" title="Lien permanent vers cette rubrique"></a></h1>
+<div class="section" id="etape-1-premier-composant">
+<h2><span class="section-number">2.2.2.1. </span>Etape 1 - premier composant<a class="headerlink" href="#etape-1-premier-composant" title="Lien permanent vers cette rubrique"></a></h2>
+<p>C’est sur cette interface que nous créerons notre schéma électrique en spécifiant les composants.</p>
+<a class="reference internal image-reference" href="../_images/kicad_editeur_schemat.png"><img alt="../_images/kicad_editeur_schemat.png" class="align-center" src="../_images/kicad_editeur_schemat.png" style="width: 960.0px; height: 540.0px;" /></a>
+<p>Pour ajouter des composants à la feuille, appuyez sur la touche A de votre clavier ou sur l’icône à droite de l’interface.</p>
+<p>Une fenêtre s’ouvre, vous pouvez alors choisir un composant en le recherchant avec sa référence ou en fouillant. Au début trouver un composant est laborieux, mais avec le temps, vous les trouverez plus facilement.</p>
+<p>Nous pouvons commencer à ajouter les résistances, les leds et les pins à notre circuit. Pour tourner un composant, vous pouvez appuyer sur la touche R.</p>
+<p>Les leds se trouvent en recherchant simplement « R », les pins en recherchant « conn », les led avec « led »</p>
+<a class="reference internal image-reference" href="../_images/circuit_sans_int.png"><img alt="../_images/circuit_sans_int.png" class="align-center" src="../_images/circuit_sans_int.png" style="width: 458.0px; height: 252.0px;" /></a>
+<p>Nous devons maintenant ajouter l’interrupteur, malheureusement le symbole correspondant n’existe pas forcément sur KiCad et nous allons devoir le créer nous mîmes. Pour cela, revenez sur le menu principal de KiCad et allez dans « Éditeur de Symbole. »</p>
+</div>
+<div class="section" id="etape-2-editeur-de-symbole">
+<h2><span class="section-number">2.2.2.2. </span>Etape 2 - Editeur de symbole<a class="headerlink" href="#etape-2-editeur-de-symbole" title="Lien permanent vers cette rubrique"></a></h2>
+<a class="reference internal image-reference" href="../_images/kicad_editeur_de_symbole.png"><img alt="../_images/kicad_editeur_de_symbole.png" class="align-center" src="../_images/kicad_editeur_de_symbole.png" style="width: 960.0px; height: 540.0px;" /></a>
+<p>Nous voila maintenant dans l’éditeur de symbole. Si vous n’avez jamais utilisé ce dernier, vous devez commencer par crier votre propre librairie a composant, pour cela rendez vous dans fichier&gt;Ajouter Librairie…Choisissez Global dans la nouvelle fenêtre. Donnez-lui un nom, par exemple « ma_lib » et enregistrez l’a l’endroit proposer.</p>
+<p>Effectuez un clique-droit sur votre librairie dans l’arbre de gauche et sélectionner « nouveau symbole ». Spécifier les informations de votre composant, par exemple comme suit</p>
+<a class="reference internal image-reference" href="../_images/parametre_creation_symbole.png"><img alt="../_images/parametre_creation_symbole.png" class="align-center" src="../_images/parametre_creation_symbole.png" style="width: 348.0px; height: 376.0px;" /></a>
+<p>Vous pouvez désormais ajouter les 3 pins de l’interrupteur en spécifiant le numéro de ces derniers.</p>
+<a class="reference internal image-reference" href="../_images/propriete_pin.png"><img alt="../_images/propriete_pin.png" class="align-center" src="../_images/propriete_pin.png" style="width: 500.5px; height: 308.1px;" /></a>
+<p>Vous pouvez ensuite vous servir des éléments de tracé présents à droite de l’interface. Pour finir le tracer d’une ligne faite un clique droit &gt; finir tracer.</p>
+<a class="reference internal image-reference" href="../_images/symbole_int_on-on.png"><img alt="../_images/symbole_int_on-on.png" class="align-center" src="../_images/symbole_int_on-on.png" style="width: 451.5px; height: 250.0px;" /></a>
+<p>N’oubliez pas d’enregistrer avant de quitter l’édition de symbole.</p>
+</div>
+<div class="section" id="etape-3-finalisation-schemat">
+<h2><span class="section-number">2.2.2.3. </span>Etape 3 - finalisation schemat<a class="headerlink" href="#etape-3-finalisation-schemat" title="Lien permanent vers cette rubrique"></a></h2>
+<p>De retour dans l’éditeur de schématique, vous pouvez maintenant ajouter le symbole que vous avez créé dans votre librairie et finaliser le circuit</p>
+<a class="reference internal image-reference" href="../_images/circuit_complet.png"><img alt="../_images/circuit_complet.png" class="align-center" src="../_images/circuit_complet.png" style="width: 478.5px; height: 277.0px;" /></a>
+<p>Nous allons maintenant devoir spécifier le numéro de chaque composant. Pour cela, double-cliquer sur chaque composant pour ouvrir le menu des paramètres de ces derniers.</p>
+<a class="reference internal image-reference" href="../_images/parametre_composant.png"><img alt="../_images/parametre_composant.png" class="align-center" src="../_images/parametre_composant.png" style="width: 538.0px; height: 277.0px;" /></a>
+<p>Et vous devez rentrer le numéro du symbole dans la première ligne. Vous devez avoir aucun composant avec la même référence. Vous pouvez par la même occasion spécifier la valeur des résistances pour vous aider.</p>
+<p>Je vous recommande d’indiquer dans votre schéma la masse de votre circuit grâce à un label, cette étape est indispensable si vous souhaitez réaliser un plan de masse. Pour cela, choisissez « ajouter un label » dans les options à droite de l’interface. Spécifier son nom, par exemple « GND » puis sélectionner le fil concerné dans votre circuit</p>
+<p>Voici le schéma désormais numéroté et avec le label</p>
+<a class="reference internal image-reference" href="../_images/circuit_fini.png"><img alt="../_images/circuit_fini.png" class="align-center" src="../_images/circuit_fini.png" style="width: 427.0px; height: 290.0px;" /></a>
+<p>Nous allons maintenant devoir indiquer l’empreinte électrique de nos composants. En général un composant existe en composant traversant (THT) ou en composant monter en surface (CMS). De même ces deux type existe de plein de taille différente. Nous devons donc spécifier notre composant physique.</p>
+<p>Pour cela double-cliquer sur chaque composant, dans la ligne « footprint » cliquer sur les 3 traits verticaux. Une nouvelle fenêtre s’ouvre, vous devez maintenant chercher l’empreinte de votre composant. Au début trouver la bonne empreinte est laborieux, mais avec le temps, vous les trouverez plus facilement.</p>
+<a class="reference internal image-reference" href="../_images/choix_empreinte.png"><img alt="../_images/choix_empreinte.png" class="align-center" src="../_images/choix_empreinte.png" style="width: 960.0px; height: 540.0px;" /></a>
+<p>Ici, nous avons :</p>
+<ul class="simple">
+<li><p>Pour les résistances 100 ohm : Resistor_SMD:R1210_3225Metric</p></li>
+<li><p>Pour la résistance de 10kohm : Resistor_SMD:R1206_3216Metric</p></li>
+<li><p>Pour les leds : LED_THT:LED_D5.0mm</p></li>
+<li><p>Pour les pins : Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</p></li>
+</ul>
+<p>Nous avons le même problème que précédemment, notre interrupteur ne possède pas d’empreinte, nous devons la réaliser nous mîmes. Pour cela, revenez sur le menu principal de KiCad et allez dans « Éditeur d’empreinte. »</p>
+</div>
+<div class="section" id="etape-4-editeur-d-empreinte">
+<h2><span class="section-number">2.2.2.4. </span>Etape 4 - Editeur d’empreinte<a class="headerlink" href="#etape-4-editeur-d-empreinte" title="Lien permanent vers cette rubrique"></a></h2>
+<a class="reference internal image-reference" href="../_images/kicad_editeur_d'empreinte.png"><img alt="../_images/kicad_editeur_d%27empreinte.png" class="align-center" src="../_images/kicad_editeur_d%27empreinte.png" style="width: 960.0px; height: 540.0px;" /></a>
+<p>Si vous n’avez pas encore vous propre librairie d’empreinte, suivez les mêmes étapes que lors de la création de votre librairie de symbole.</p>
+<p>Effectuez maintenant un clique droit sur votre librairie dans l’arbre de gauche puis nouvelle empreinte. Indiquer le nom de votre composant puis le type d’empreinte, pad traversant ou CMS</p>
+<p>Lors de la création de votre composant, je vous recommande de jouer avec les paramètres de grille pour facilement dessiner à la bonne dimension. Vous avez deux principaux multiples de taille, soit un pas métrique soit un pas impérial. Sachant que la plus par des composants électriques suive un pas impérial. La plus courante étants l’entraxe de 2.54mm entre 2 pin dupont ce qui correspond a 1/10 de inch</p>
+<p>Dans notre cas, je règle la grille à 0.500 mm, l’entraxe des pins de l’interrupteur étants de 4.500 mm.</p>
+<p>Avec l’option pad qui se trouve à droite, vous pouvez ajouter les pads. En double-cliquant dessus, vous ouvriez les paramètres.</p>
+<a class="reference internal image-reference" href="../_images/parametre_pad.png"><img alt="../_images/parametre_pad.png" class="align-center" src="../_images/parametre_pad.png" style="width: 580.5px; height: 301.0px;" /></a>
+<p>Après avoir mesuré les pins de l’interrupteur he constate que ces derniers sont plus gros que la normale. Il faut ainsi modifier les dimensions du pad et du perçage comme ci-dessus.</p>
+<p>Vous devez maintenant effectuer cette action pour tous les pads et vous pouvez vous aider de l’outil mesure pour les placer correctement. Attention, le numéro des pins est important et doit correspondre au pin du symbole.</p>
+<a class="reference internal image-reference" href="../_images/placement_pad.png"><img alt="../_images/placement_pad.png" class="align-center" src="../_images/placement_pad.png" style="width: 448.0px; height: 180.5px;" /></a>
+<p>Vous pouvez maintenant dessiner un rectangle qui indique les dimensions de votre composant, ici 8mm * 13mm. Attention à bien avoir sélectionné la couche F.Silscreen dans le volet de droite pour spécifier que ce rectangle est un marquage</p>
+<a class="reference internal image-reference" href="../_images/empreinte_rectangle.png"><img alt="../_images/empreinte_rectangle.png" class="align-center" src="../_images/empreinte_rectangle.png" style="width: 565.25px; height: 275.45px;" /></a>
+<p>Vous pouvez maintenant enregistrer et quitter cette fenêtre.</p>
+</div>
+<div class="section" id="etape-5-passage-dans-l-editeur-de-kicad">
+<h2><span class="section-number">2.2.2.5. </span>Etape 5 - Passage dans l’editeur de Kicad<a class="headerlink" href="#etape-5-passage-dans-l-editeur-de-kicad" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Cette dernière empreinte maintenant spécifié sur l’interrupteur, vous pouvez maintenant enregistrer, revenir au menu et sélectionner « éditeur de PCB KiCad »</p>
+</div>
+</div>
+<div class="section" id="editeur-de-pcb-kicad">
+<h1><span class="section-number">2.2.3. </span>Editeur de PCB KiCad<a class="headerlink" href="#editeur-de-pcb-kicad" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Nous voila maintenant sur l’éditeur de PCB.</p>
+<a class="reference internal image-reference" href="../_images/kicad_editeur_pcb.png"><img alt="../_images/kicad_editeur_pcb.png" class="align-center" src="../_images/kicad_editeur_pcb.png" style="width: 960.0px; height: 540.0px;" /></a>
+<div class="section" id="etape-6-importer-les-empreinte">
+<h2><span class="section-number">2.2.3.1. </span>Etape 6 - Importer les empreinte<a class="headerlink" href="#etape-6-importer-les-empreinte" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Nous devons commencer par importer les empreintes du circuit que nous avons dessiné. Pour cela, appuyez sur F8 ou sur le bouton correspondant en haut de votre écran.</p>
+<p>Cette nouvelle fenêtre s’ouvre, si vous n’avez pas d’erreur appuyer sur « Mise à jour PCB »</p>
+<a class="reference internal image-reference" href="../_images/mise_a_jour_pcb.png"><img alt="../_images/mise_a_jour_pcb.png" class="align-center" src="../_images/mise_a_jour_pcb.png" style="width: 422.0px; height: 323.0px;" /></a>
+<p>Toutes nos empreintes sont importées en tas.</p>
+<a class="reference internal image-reference" href="../_images/tas_empreinte.png"><img alt="../_images/tas_empreinte.png" class="align-center" src="../_images/tas_empreinte.png" style="width: 370.8px; height: 289.2px;" /></a>
+<p>Nous pouvons maintenant commencer par les réarranger. Vous apprendrez avec le temps qu’elle est le meilleur emplacement des composants. Vous pouvez les tourner avec la touche R. Je les positionne de cette manière.</p>
+<a class="reference internal image-reference" href="../_images/composant_placer.png"><img alt="../_images/composant_placer.png" class="align-center" src="../_images/composant_placer.png" style="width: 401.5px; height: 287.5px;" /></a>
+<p>Vous pouvez apercevoir des traits blancs qui relient les pads entre eux, ces traits s’appellent le chevelu et vous indique les pistes que vous devez reliez entre elles.</p>
+</div>
+<div class="section" id="etape-7-bordure">
+<h2><span class="section-number">2.2.3.2. </span>Etape 7 - Bordure<a class="headerlink" href="#etape-7-bordure" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Nous allons maintenant définir les dimensions de notre PCB. Pour cela commencer par sélectionner la couche Edge Cut puis utiliser les outils de dessins pour tracer un rectangle autour de votre pcb.</p>
+<a class="reference internal image-reference" href="../_images/edge_cut.png"><img alt="../_images/edge_cut.png" class="align-center" src="../_images/edge_cut.png" style="width: 471.0px; height: 266.5px;" /></a>
+<p>Ce tracé définit une coupe, vous pouvez aussi vous en servir pour dessiner des passages de vis permettant la fixation d’un pcb.</p>
+</div>
+<div class="section" id="etape-8-le-plan-de-masse">
+<h2><span class="section-number">2.2.3.3. </span>Etape 8 - Le plan de masse<a class="headerlink" href="#etape-8-le-plan-de-masse" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Nous allons maintenant ajouter un plan de masse. Cette étape n’est pas obligatoire pour toutes les cartes, mais en général cela aide beaucoup et réduis drastiquement le nombre de pistes a placer.</p>
+<p>Attention, cette étape requiert d’avoir ajouté un label spécifiant votre masse sur votre schéma.</p>
+<p>Appuyer sur l’option ajouter une zone dans les paramètres de droite puis cliquer sur le schéma au début du tracer de la zone. Attention lors de la définition d’un plan de masse, il est impératif de laisser une marge d’au moins 0.500 mm avec les bordures de votre pcb.</p>
+<p>Une nouvelle fenêtre s’ouvre :</p>
+<a class="reference internal image-reference" href="../_images/parametre_zone.png"><img alt="../_images/parametre_zone.png" class="align-center" src="../_images/parametre_zone.png" style="width: 671.5px; height: 389.5px;" /></a>
+<p>Sur cette fenêtre, vous devez spécifier la couche sur laquelle est présente la zone, ici la couche arrière (back en bleu) et le label qui spécifie quels pads pourront être reliés à cette zone ici /GND. Voir ci-dessus. Valider avec ok puis tracer votre zone.</p>
+<p>Une fois la zone tracée, vous devez mettre à jour les pistes grâce à la touche B.</p>
+<a class="reference internal image-reference" href="../_images/plan_masse_zone.png"><img alt="../_images/plan_masse_zone.png" class="align-center" src="../_images/plan_masse_zone.png" style="width: 1000.0px; height: 292.0px;" /></a>
+<p>Félicitations maintenant tout les pads traversant appartenant au label /GND sont maintenant relier à la zone, vous avez créé un plan de masse sur la couche arrière. Vous pouvez faire de même pour la couche avant si vous le souhaitez, cela peut être utile dans le cas de l’utilisation de CMS.</p>
+</div>
+<div class="section" id="etape-9-tracer-les-piste">
+<h2><span class="section-number">2.2.3.4. </span>Etape 9 - Tracer les piste<a class="headerlink" href="#etape-9-tracer-les-piste" title="Lien permanent vers cette rubrique"></a></h2>
+<p>La couche arrière (la bleu) étant occupée par le plan de masse, nous allons relier les pads entre eux sur la couche avant (la rouge).</p>
+<p>Replacer vous sur la couche F.Cu et sélectionner l’outil route piste ou la touche X de votre clavier. Cliquer sur un pad, les pads auquel vous pouvez vous reliez apparaissent en surbrillance tant que vous ne vous y êtes pas relier. Si vous n’avez pas assez de liberté de mouvement pour placer votre piste, jouez avec la résolution de la grille.</p>
+<p>Cette étape s’appelle le routage.</p>
+<a class="reference internal image-reference" href="../_images/premiere_piste.png"><img alt="../_images/premiere_piste.png" class="align-center" src="../_images/premiere_piste.png" style="width: 100.2px; height: 278.4px;" /></a>
+<p>Répéter l’opération jusqu’à avoir rooté l’entièreté de votre circuit.</p>
+<a class="reference internal image-reference" href="../_images/pcb_sans_via.png"><img alt="../_images/pcb_sans_via.png" class="align-center" src="../_images/pcb_sans_via.png" style="width: 611.5px; height: 347.0px;" /></a>
+<p>Malheureusement, la résistance R3 ne peut pas être relier à la masse depuis cette couche, pour régler ce problème nous allons devoir ajouter un via.</p>
+</div>
+<div class="section" id="etape-10-via">
+<h2><span class="section-number">2.2.3.5. </span>Etape 10 - Via<a class="headerlink" href="#etape-10-via" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Les vias sont des trous qui traversent un pcb et qui permet à une piste d’accéder a une autre couche de la carte.</p>
+<p>Pour ajouter un via, commencer a tracer votre piste. Une fois que vous êtes arrivé à l’endroit voulu appuyer sur la touche V de votre clavier. Valider l’emplacement avec un clique souris, et vous pouvez continuer votre piste de l’autre côté ou quittez pour vous relier au plan de masse.</p>
+<a class="reference internal image-reference" href="../_images/via.png"><img alt="../_images/via.png" class="align-center" src="../_images/via.png" style="width: 722.5px; height: 194.5px;" /></a>
+</div>
+<div class="section" id="etape-11-verification">
+<h2><span class="section-number">2.2.3.6. </span>Etape 11 - Verification<a class="headerlink" href="#etape-11-verification" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Vous pouvez maintenant vous assurer que votre pcb est complètement router avec les informations présente en bas à gauche de votre écran.</p>
+<a class="reference internal image-reference" href="../_images/info_pcb.png"><img alt="../_images/info_pcb.png" class="align-center" src="../_images/info_pcb.png" style="width: 492.0px; height: 67.0px;" /></a>
+<p>Nous pouvons voir en dessous de l’information « non routé » un 0, cela signifie que notre pcb est entièrement routé.</p>
+</div>
+<div class="section" id="etape-12-encrage">
+<h2><span class="section-number">2.2.3.7. </span>Etape 12 - Encrage<a class="headerlink" href="#etape-12-encrage" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Nous souhaitons maintenant que des informations figurent sur notre pcb. Pour cela, nous devons nous placer sur la F.Silkscreen ou B.Silkscreen. Je vous recommande de cacher les couches F.CU, B.Cu, F.Fab et B.Fab pour cette étape.</p>
+<p>Vous pouvez désormais déplacer les références des composants selon votre convenance.</p>
+<a class="reference internal image-reference" href="../_images/f_silk.png"><img alt="../_images/f_silk.png" class="align-center" src="../_images/f_silk.png" style="width: 616.0px; height: 344.5px;" /></a>
+<p>Ces informations seront marquées à l’encre sur le pcb lors de la production par un sous-traitant.</p>
+<p>Nous pouvons aussi ajouter notre propre texte sur la face arrière du pcb par exemple. Pour cela placer vous dans la couche B.Silkscreen puis sélectionné « ajouter un texte » dans les outils de dessin.</p>
+<p>Une nouvelle fenêtre s’ouvre, rentrez votre texte et les paramètres que vous voulez. Pensez a sélectionné l’option « miroir » si vous écrivez sur la couche arrière.</p>
+<a class="reference internal image-reference" href="../_images/parametre_texte.png"><img alt="../_images/parametre_texte.png" class="align-center" src="../_images/parametre_texte.png" style="width: 364.0px; height: 339.5px;" /></a>
+<p>Valider avec « ok » puis placer le texte à l’endroit voulu.</p>
+<a class="reference internal image-reference" href="../_images/fb_slik.png"><img alt="../_images/fb_slik.png" class="align-center" src="../_images/fb_slik.png" style="width: 386.4px; height: 225.39999999999998px;" /></a>
+</div>
+<div class="section" id="etape-13-visualisation">
+<h2><span class="section-number">2.2.3.8. </span>Etape 13 - Visualisation<a class="headerlink" href="#etape-13-visualisation" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Pour vous assurer que votre PCB correspond à vos attentes, vous pouvez le visualiser en 3D</p>
+<p>Pour cela, allez dans Affichage &gt; Visu 3D</p>
+<a class="reference internal image-reference" href="../_images/visu_3d.png"><img alt="../_images/visu_3d.png" class="align-center" src="../_images/visu_3d.png" style="width: 960.0px; height: 540.0px;" /></a>
+<p>Tout les composant ne possède pas de fichier, notamment ceux que nous avons créer. Cela explique que l’interrupteur n’apparaît pas.</p>
+<p>Si votre PCB vous convient, vous pouvez passer à la production de ce dernier.</p>
+</div>
+</div>
+<div class="section" id="fabrication-du-pcb">
+<h1><span class="section-number">2.2.4. </span>Fabrication du PCB<a class="headerlink" href="#fabrication-du-pcb" title="Lien permanent vers cette rubrique"></a></h1>
+<div class="section" id="etape-14-exporter-les-fichier-de-fabrication">
+<h2><span class="section-number">2.2.4.1. </span>Etape 14 - Exporter les fichier de fabrication<a class="headerlink" href="#etape-14-exporter-les-fichier-de-fabrication" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Notre pcb étants prêt nous pouvons maintenant exporter les fichiers de fabrication nécessaire à la production de la carte a l’école ou en ligne</p>
+<p>Pour commencer le rendez-vous danss fichier&gt;Fichiers de fabrication&gt;Gerbers</p>
+<a class="reference internal image-reference" href="../_images/fichier_export.png"><img alt="../_images/fichier_export.png" class="align-center" src="../_images/fichier_export.png" style="width: 311.5px; height: 228.0px;" /></a>
+<p>Une nouvelle fenêtre s’ouvre, sélectionner les couches ci-dessous, choisissez le format Gerber puis appuyez sur « tracer ».</p>
+<a class="reference internal image-reference" href="../_images/fenetre_tracer.png"><img alt="../_images/fenetre_tracer.png" class="align-center" src="../_images/fenetre_tracer.png" style="width: 509.0px; height: 352.5px;" /></a>
+<p>Ensuite, nous allons exporter les fichiers de perçage. Pour cela appuyer sur créer le fichier de perçage, une nouvelle fenêtre s’ouvre. Choisissez Gerber X2 puis « créer fichier de traçage »</p>
+<a class="reference internal image-reference" href="../_images/fenetre_percage.png"><img alt="../_images/fenetre_percage.png" class="align-center" src="../_images/fenetre_percage.png" style="width: 455.0px; height: 358.0px;" /></a>
+<p>Vous pouvez fermer ces fenêtres, les fichiers de fabrication on été générer.</p>
+</div>
+<div class="section" id="jlcpcb">
+<h2><span class="section-number">2.2.4.2. </span>JLCPCB<a class="headerlink" href="#jlcpcb" title="Lien permanent vers cette rubrique"></a></h2>
+<p>JLCPCB est un sous-traitant en ligne de pcb : <a class="reference external" href="https://jlcpcb.com/">https://jlcpcb.com/</a></p>
+<p>Ce sous-traitant a besoin de tous vos fichiers de fabrication archivé. Prenez directement votre dossier de projet de la carte et zipper la en fichier zip ou rar.</p>
+<p>Glissez déposer ensuite l’archive à l’endroit prévu.</p>
+<a class="reference internal image-reference" href="../_images/import_jlcpcb.png"><img alt="../_images/import_jlcpcb.png" class="align-center" src="../_images/import_jlcpcb.png" style="width: 778.0px; height: 257.5px;" /></a>
+<p>Vous pouvez maintenant paramétrer votre pcb. Les options par défaut sont normalement les meilleurs.</p>
+<a class="reference internal image-reference" href="../_images/parametre_jlcpcb.png"><img alt="../_images/parametre_jlcpcb.png" class="align-center" src="../_images/parametre_jlcpcb.png" style="width: 514.5px; height: 465.5px;" /></a>
+</div>
+</div>
+<div class="section" id="aide">
+<h1><span class="section-number">2.2.5. </span>Aide<a class="headerlink" href="#aide" title="Lien permanent vers cette rubrique"></a></h1>
+<div class="section" id="raccourcis-clavier">
+<h2><span class="section-number">2.2.5.1. </span>Raccourcis clavier<a class="headerlink" href="#raccourcis-clavier" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>A : ajouter composant au schéma</p></li>
+<li><p>R : tourner un composant ou une empreinte sélectionner</p></li>
+<li><p>F8 : mise à jour du pcb à partir du schéma actuel</p></li>
+<li><p>F : flip un composant, pour la changer entre couche Front ou Back</p></li>
+<li><p>X : router les pistes</p></li>
+<li><p>V : ajouter un via</p></li>
+<li><p>B : mettre à jour les pistes</p></li>
+</ul>
+</div>
+<div class="section" id="composant">
+<h2><span class="section-number">2.2.5.2. </span>Composant<a class="headerlink" href="#composant" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Résistance : Device &gt; R</p></li>
+<li><p>Condensateur : Device &gt; C</p></li>
+<li><p>Led : Device &gt; LED</p></li>
+<li><p>Pin : Connector &gt; Conn_0?x_0?_?</p></li>
+</ul>
+</div>
+<div class="section" id="taille-de-piste-predefinis">
+<h2><span class="section-number">2.2.5.3. </span>Taille de piste prédéfinis<a class="headerlink" href="#taille-de-piste-predefinis" title="Lien permanent vers cette rubrique"></a></h2>
+<p>En haut à droite, ouvrez « piste : utiliser largeur de netclasse »</p>
+<p>Cliquer sur « éditer taille prédéfinis »</p>
+<p>Une nouvelle fenêtre s’ouvre.</p>
+<p>Allez dans règles de conception &gt; taille prédéfinis</p>
+<p>Dans le tableau de gauche, vous pouvez maintenant ajouter des largeurs de piste.</p>
+<p>Validez avec « ok. »</p>
+<p>Vous pouvez maintenant sélectionner une taille de piste prédéfinie pour tracer.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Tree-KiCad.html" class="btn btn-neutral float-left" title="2.2. KiCad" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../Electronique/Tree.html" class="btn btn-neutral float-right" title="3. Électronique" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+
+
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+<script type="text/javascript" src="../_static/tcs_theme.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.4.1. Introduction &mdash; Documentation HRC Documentation 1.0.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/logo_48x48.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="4.5. Arduino" href="Tree-Arduino.html" />
+    <link rel="prev" title="4.4. Ubuntu" href="Tree-Ubuntu.html" />
+
+<link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            HRC Documentation
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../programmation_robots/Tree.html">1. Programmation Robots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programmation_robots/Tree-ROS.html">1.1. Programmation ROS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html">1.1.1. Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#fonctionnement-code">1.1.2. Fonctionnement code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#les-fichiers-erb">1.1.2.1. Les fichiers <em>.erb</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#herminebot-ou-hrc">1.1.2.2. Herminebot ou HRC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#fonctionnement-tests">1.1.3. Fonctionnement tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#executer-les-tests">1.1.3.1. Exécuter les tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#execution-sur-github">1.1.3.2. Exécution sur GitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#tests-a-ajouter">1.1.3.3. Tests à ajouter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#creer-des-plugins-nav2">1.1.4. Créer des plugins Nav2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#navigateur">1.1.4.1. Navigateur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#plugin-d-arbre-de-comportement">1.1.4.2. Plugin d’arbre de comportement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#comportement">1.1.4.3. Comportement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#ecrire-de-nouveaux-messages">1.1.5. Écrire de nouveaux messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programmation_robots/Tree-Code_conventions.html">1.2. Conventions de programmation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Code_conventions.html">1.2.1. Messages de commit et PR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Code_conventions.html#langages-de-programmation">1.2.2. Langages de programmation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/Code_conventions.html#commun">1.2.2.1. Commun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/Code_conventions.html#c">1.2.2.2. C++</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/Code_conventions.html#python">1.2.2.3. Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programmation_robots/Tree-Git_GitHub.html">1.3. Git et GitHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html">1.3.1. Principe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html#exemple-de-workflow">1.3.2. Exemple de workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html#github-actions">1.3.3. GitHub Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html#commandes-git-utiles">1.3.4. Commandes Git utiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CAO/Tree.html">2. CAO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CAO/Tree-Solidworks.html">2.1. Solidworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/Solidworks.html">2.1.1. Solidworks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/Solidworks.html#ajout-pour-le-crubs">2.1.2. Ajout pour le CRUBS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#volet-d-infos">2.1.2.1. Volet d’infos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#bibliotheques">2.1.2.2. Bibliotheques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#macros">2.1.2.3. Macros</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#feuille-de-plans">2.1.2.4. Feuille de plans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#materiaux">2.1.2.5. Materiaux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CAO/Tree-KiCad.html">2.2. KiCad</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html">2.2.1. KiCad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#le-circuit">2.2.1.1. Le circuit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#nouveau-projet-kicad">2.2.1.2. Nouveau projet kicad</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html#editeur-de-schematique">2.2.2. Editeur de Schematique</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-1-premier-composant">2.2.2.1. Etape 1 - premier composant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-2-editeur-de-symbole">2.2.2.2. Etape 2 - Editeur de symbole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-3-finalisation-schemat">2.2.2.3. Etape 3 - finalisation schemat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-4-editeur-d-empreinte">2.2.2.4. Etape 4 - Editeur d’empreinte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-5-passage-dans-l-editeur-de-kicad">2.2.2.5. Etape 5 - Passage dans l’editeur de Kicad</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html#editeur-de-pcb-kicad">2.2.3. Editeur de PCB KiCad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-6-importer-les-empreinte">2.2.3.1. Etape 6 - Importer les empreinte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-7-bordure">2.2.3.2. Etape 7 - Bordure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-8-le-plan-de-masse">2.2.3.3. Etape 8 - Le plan de masse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-9-tracer-les-piste">2.2.3.4. Etape 9 - Tracer les piste</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-10-via">2.2.3.5. Etape 10 - Via</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-11-verification">2.2.3.6. Etape 11 - Verification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-12-encrage">2.2.3.7. Etape 12 - Encrage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-13-visualisation">2.2.3.8. Etape 13 - Visualisation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html#fabrication-du-pcb">2.2.4. Fabrication du PCB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-14-exporter-les-fichier-de-fabrication">2.2.4.1. Etape 14 - Exporter les fichier de fabrication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#jlcpcb">2.2.4.2. JLCPCB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html#aide">2.2.5. Aide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#raccourcis-clavier">2.2.5.1. Raccourcis clavier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#composant">2.2.5.2. Composant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#taille-de-piste-predefinis">2.2.5.3. Taille de piste prédéfinis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Electronique/Tree.html">3. Électronique</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Lois.html">3.1. Lois</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html">3.1.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#loi-d-ohm">3.1.2. Loi d’Ohm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#loi-des-mailles">3.1.3. Loi des mailles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#loi-des-noeuds">3.1.4. Loi des nœuds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#pont-diviseur-de-tension">3.1.5. Pont diviseur de tension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#resistances-en-serie">3.1.6. Résistances en série</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#resistances-en-parallele">3.1.7. Résistances en parallèle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#theoreme-de-millman">3.1.8. Théorème de Millman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#puissance">3.1.9. Puissance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#tension-efficace">3.1.10. Tension efficace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#autres-theoremes">3.1.11. Autres théorèmes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Composants.html">3.2. Composants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html">3.2.1. Résistances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#condensateurs">3.2.2. Condensateurs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#bobines">3.2.3. Bobines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#transistors-mosfets">3.2.4. Transistors &amp; Mosfets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Composants.html#transistor">3.2.4.1. Transistor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Composants.html#mosfet">3.2.4.2. Mosfet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#regulateur-lineaire">3.2.5. Régulateur linéaire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#regulateur-hacheur">3.2.6. Régulateur hacheur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#amplificateur-operationnel">3.2.7. Amplificateur opérationnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#diode">3.2.8. Diode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Filtres.html">3.3. Filtres</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Filtres.html">3.3.1. Filtre passe-bas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Filtres.html#fonction-de-transfert-du-premier-ordre">3.3.1.1. Fonction de transfert du premier ordre</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Filtres.html#filtre-rc-passif">3.3.1.2. Filtre RC passif</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Filtres.html#filtre-actif">3.3.1.3. Filtre actif</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Motorisation.html">3.4. Motorisation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Motorisation.html">3.4.1. Motorisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Bus_communications.html">3.5. Bus &amp; communications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Bus_communications.html">3.5.1. Bus &amp; communications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="Tree.html">4. Programmation et Informatique</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Tree-Doc_sphinx.html">4.1. Doc Sphinx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Doc_sphinx.html">4.1.1. Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#editer-la-documentation">4.1.1.1. Éditer la documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Doc_sphinx.html#commencement">4.1.2. Commencement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#installation">4.1.2.1. Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#generation">4.1.2.2. Génération</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#toctree-index-et-ordonnancement-des-fichiers">4.1.2.3. Toctree, index et ordonnancement des fichiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#compilation">4.1.2.4. Compilation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Doc_sphinx.html#generalites">4.1.3. Généralités</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#titres">4.1.3.1. Titres</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#format-de-texte">4.1.3.2. Format de texte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#liste-et-enumeration">4.1.3.3. Liste et énumération</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#tableaux">4.1.3.4. Tableaux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#notes">4.1.3.5. Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#warnings">4.1.3.6. Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#astuces">4.1.3.7. Astuces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#dangers">4.1.3.8. Dangers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Doc_sphinx.html#ajout-de-medias">4.1.4. Ajout de médias</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#bloc-de-code">4.1.4.1. Bloc de code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#images">4.1.4.2. Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#hyperlien">4.1.4.3. Hyperlien</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#lien-dans-la-documentation">4.1.4.4. Lien dans la documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tree-Raspberry_Pi.html">4.2. Raspberry PI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Raspberry_Pi.html">4.2.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Raspberry_Pi.html#demmarage">4.2.2. Démmarage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Raspberry_Pi.html#installation">4.2.2.1. Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspberry_Pi.html#mises-a-jour">4.2.2.2. Mises à jour</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tree-Raspbian.html">4.3. Raspbian OS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Raspbian.html">4.3.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Raspbian.html#adresse-ip-statique">4.3.2. Adresse IP statique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Raspbian.html#hotspot-wifi">4.3.3. Hotspot WIFI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#prerequis">4.3.3.1. Prerequis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#adresse-ip-fixe-en-wifi">4.3.3.2. Adresse IP fixe en wifi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#configuration-du-serveur-dhcp">4.3.3.3. Configuration du serveur DHCP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#parametrage-du-reseau-wifi">4.3.3.4. Paramétrage du réseau wifi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#test">4.3.3.5. Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="Tree-Ubuntu.html">4.4. Ubuntu</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.4.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hotspot-wifi-et-ip-fixes">4.4.2. Hotspot WIFI et IP fixes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#commandes-utiles">4.4.2.1. Commandes utiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ssh">4.4.3. SSH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wlan0">4.4.3.1. wlan0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eth0">4.4.3.2. eth0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#depannage">4.4.3.3. Dépannage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fixer-le-nom-des-ports-usb">4.4.4. Fixer le nom des ports USB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#autres-commandes">4.4.5. Autres commandes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#interface-graphique">4.4.5.1. Interface graphique</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#activation-des-interfaces-des-differents-bus">4.4.6. Activation des interfaces des différents bus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i2c">4.4.6.1. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spi">4.4.6.2. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#can">4.4.6.3. CAN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tree-Arduino.html">4.5. Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Arduino.html">4.5.1. Arduino</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Arduino.html#liaison-serie">4.5.2. Liaison serie</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Arduino.html#cote-arduino">4.5.2.1. Cote arduino</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Arduino.html#cote-python">4.5.2.2. Cote python</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Arduino.html#les-interuptions">4.5.3. Les interuptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Arduino.html#interruptions-sur-un-pin">4.5.3.1. interruptions sur un pin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Arduino.html#interruptions-sur-timer">4.5.3.2. interruptions sur timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tree-ROS_Arduino.html">4.6. ROS-Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ROS_Arduino.html">4.6.1. Installation et Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ROS_Arduino.html#lancement-d-une-liaison-serie-ros-arduino">4.6.2. Lancement d’une liaison serie ROS - Arduino</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HRC Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+
+<span style="float: right;" >
+    <a class="github-button" href="https://github.com/Hermine-HRC/documentation"
+       data-color-scheme="no-preference: light; light: light; dark: dark;"
+       data-size="large" aria-label="Éditer cette documentation sur GitHub" >Éditer</a>
+</span>
+
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Tree.html"><span class="section-number">4. </span>Programmation et Informatique</a></li>
+          <li class="breadcrumb-item"><a href="Tree-Ubuntu.html"><span class="section-number">4.4. </span>Ubuntu</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.4.1. </span>Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="introduction">
+<h1><span class="section-number">4.4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h1>
+</div>
+<div class="section" id="hotspot-wifi-et-ip-fixes">
+<h1><span class="section-number">4.4.2. </span>Hotspot WIFI et IP fixes<a class="headerlink" href="#hotspot-wifi-et-ip-fixes" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Nous allons maintenant configurer un hotspot wifi afin de se connecter sur la Pi en ssh et de permettre aux robots
+et aux autres périphérique de communiquer sur un même réseau.</p>
+<p>Installons les outils de réseau qui ne sont pas encore présents après la mise à jour.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>network-manager
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>wpasupplicant
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ifupdown
+</pre></div>
+</div>
+<p>Désactivation de cloud init :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;echo &#39;network: {config: disabled}&#39; &gt; /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg&quot;</span>
+</pre></div>
+</div>
+<p>Nous allons maintenant modifier le fichier de configuration du réseau, nous en profiterons pour ajouter des IP fixes
+pour faciliter les accès en SSH avec ces dernières.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/netplan/*.yaml
+</pre></div>
+</div>
+<p>Puis rentrer le texte suivant en prenant soin de modifier « yourssid » et « yourpassword » par le nom du réseau wifi
+et le mot de passe que vous voulez.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>network:
+<span class="w">  </span>version:<span class="w"> </span><span class="m">2</span>
+<span class="w">  </span>renderer:<span class="w"> </span>NetworkManager
+<span class="w">  </span>ethernets:
+<span class="w">    </span>eth0:
+<span class="w">      </span>dhcp4:<span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>optional:<span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>addresses:<span class="w"> </span><span class="o">[</span><span class="m">192</span>.168.2.10/24<span class="o">]</span>
+<span class="w">  </span>wifis:
+<span class="w">    </span>wlan0:
+<span class="w">      </span>dhcp4:<span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>optional:<span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span>addresses:<span class="w"> </span><span class="o">[</span><span class="m">192</span>.168.1.10/24<span class="o">]</span>
+<span class="w">      </span>access-points:
+<span class="w">        </span><span class="s2">&quot;yourssid&quot;</span>:
+<span class="w">          </span>password:<span class="w"> </span><span class="s2">&quot;yourpassword&quot;</span>
+<span class="w">          </span>mode:<span class="w"> </span>ap
+<span class="w">          </span>networkmanager:
+<span class="w">            </span>passthrough:
+<span class="w">              </span>wifi-security.proto:<span class="w"> </span><span class="s2">&quot;rsn&quot;</span><span class="w"> </span><span class="c1"># WPA2 only</span>
+</pre></div>
+</div>
+<p>Rappel : <strong>ctrl + x</strong> puis <strong>y</strong> pour quitter le fichier</p>
+<p>Désactivons l’ipv6 qui ne nous sera pas nécessaire, dans le fichier suivant :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/sysctl.conf
+</pre></div>
+</div>
+<p>Rajouter la ligne suivante à la fin du fichier :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>net.ipv6.conf.all.disable_ipv6<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Avant d’appliquer cette configuration nous devons impérativement oublier tous les réseaux wifi sur lequel la Pi
+s’est auparavant connectée. En effet, cette dernière ne peut pas émettre de réseau en même temps qu’elle est connectée
+à un autre. Nous ne voulons donc pas qu’elle se connecte à un ancien réseau wifi par mégarde.</p>
+<p>Une fois les wifi oublié, nous pouvons maintenant appliquer notre configuration et redémarrer.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>sysctl<span class="w"> </span>-p
+sudo<span class="w"> </span>netplan<span class="w"> </span>generate
+sudo<span class="w"> </span>netplan<span class="w"> </span>apply
+sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
+<p>Un réseau wifi devrais maintenant être disponible dès que la Pi aura redémarré.</p>
+<a class="reference internal image-reference" href="../_images/wifi1.png"><img alt="../_images/wifi1.png" class="align-center" src="../_images/wifi1.png" style="width: 334.0px; height: 69.0px;" /></a>
+<p>Noter que vous pourrez toujours connecter la Pi à un réseau wifi (par exemple pour l’installation de ros2),
+mais cette dernière ne pourra pas émettre son réseau et il faudra penser à lui faire oublier
+la dernière connexion wifi par sécurité.</p>
+<div class="section" id="commandes-utiles">
+<h2><span class="section-number">4.4.2.1. </span>Commandes utiles<a class="headerlink" href="#commandes-utiles" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Quelques commandes utiles concernant le wifi avec le terminal :</p>
+<p>Désactivation et réactivation du hotspot.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmcli<span class="w"> </span>radio<span class="w"> </span>wwan<span class="w"> </span>off
+</pre></div>
+</div>
+<p>Lister les wifi disponibles.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmcli<span class="w"> </span>dev<span class="w"> </span>wifi<span class="w"> </span>list
+</pre></div>
+</div>
+<p>Se connecter à un wifi.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nmcli<span class="w"> </span>dev<span class="w"> </span>wifi<span class="w"> </span>connect<span class="w"> </span>network-ssid<span class="w"> </span>password<span class="w"> </span><span class="s2">&quot;network-password&quot;</span>
+</pre></div>
+</div>
+<p>En remplaçant network-ssid par le nom du wifi présent dans la liste et « network-password » par le mot de passe
+(garder les guillemets)</p>
+<p>Pour oublier un réseau :
+Commencez par trouver le réseau que vous voulez oublier dans la liste avec la commande suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmcli<span class="w"> </span>-t<span class="w"> </span>-f<span class="w"> </span>TYPE,UUID,NAME<span class="w"> </span>con
+</pre></div>
+</div>
+<p>Vous devriez obtenir un résultat du genre : <em>802-11-wireless:12345678-31d1-51e7-a60e-3a52e52b4495:YourWifiName</em>,
+copie la suite de chiffres et lettres pour l’ajouter dans la commande ci-dessous</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nmcli<span class="w"> </span>c<span class="w"> </span>delete<span class="w"> </span>choosedUUID
+</pre></div>
+</div>
+<p>Exemple :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nmcli<span class="w"> </span>c<span class="w"> </span>delete<span class="w"> </span><span class="m">12345678</span>-31d1-51e7-a60e-3a52e52b4495
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ssh">
+<h1><span class="section-number">4.4.3. </span>SSH<a class="headerlink" href="#ssh" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Pour se connecter en SSH il faut utiliser la commande suivante sur votre PC :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>utilisateur@addressip
+</pre></div>
+</div>
+<p>À partir de ce que nous avons mis en place, nous avons donc :</p>
+<p><strong>TODO: image missing</strong></p>
+<div class="section" id="wlan0">
+<h2><span class="section-number">4.4.3.1. </span>wlan0<a class="headerlink" href="#wlan0" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Sur l’interface wlan0 après s’être connecté au réseau wifi émit par la Pi, rentrer la commande suivante dans un terminal.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>crubs@192.168.1.10
+</pre></div>
+</div>
+</div>
+<div class="section" id="eth0">
+<h2><span class="section-number">4.4.3.2. </span>eth0<a class="headerlink" href="#eth0" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Sur l’interface eth0 après avoir connecté un câble éthernet :</p>
+<p>Brancher le câble éthernet puis direction le panneau de contrôle Windows (touche Win puis rechercher panel).
+<em>Réseau et Internet &gt; Centre de résau</em> et <em>partage &gt; Ethernet &gt; Propriété &gt;</em> cocher puis doucle cliquer
+Protocole Internet version 4 (TCP/IPv4)</p>
+<a class="reference internal image-reference" href="../_images/setup_eth0_windows_1.png"><img alt="../_images/setup_eth0_windows_1.png" class="align-center" src="../_images/setup_eth0_windows_1.png" style="width: 899.25px; height: 499.75px;" /></a>
+<a class="reference internal image-reference" href="../_images/setup_eth0_windows_2.png"><img alt="../_images/setup_eth0_windows_2.png" class="align-center" src="../_images/setup_eth0_windows_2.png" style="width: 1112.25px; height: 394.75px;" /></a>
+<p>Renseigner maintenant une adresse IP sur le même réseau. Ici par exemple 192.168.2.5 avec le même masque 255.255.255.0.
+Je recommande vivement d’enlever ces changements dès la manipulation finie. En effet, vous risquez d’avoir
+de gros problèmes dès que vous vous connecterez à un autre réseau éthernet.</p>
+<p>Enfin, vous pouvez retourner dans un terminal pour rentrer la commande suivante.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>crubs@192.168.2.10
+</pre></div>
+</div>
+</div>
+<div class="section" id="depannage">
+<h2><span class="section-number">4.4.3.3. </span>Dépannage<a class="headerlink" href="#depannage" title="Lien permanent vers cette rubrique"></a></h2>
+<p>L’erreur ci-dessous vous empêchant de vous connecter en SSH peut subvenir sur votre PC.</p>
+<a class="reference internal image-reference" href="../_images/error_ssh.png"><img alt="../_images/error_ssh.png" class="align-center" src="../_images/error_ssh.png" style="width: 582.75px; height: 209.25px;" /></a>
+<p>Rentrez simplement la commande suivante puis réessayer la connexion SSH en acceptant le message avec <strong>y</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-R<span class="w"> </span><span class="m">192</span>.168.2.10
+ssh-keygen<span class="w"> </span>-R<span class="w"> </span><span class="m">192</span>.168.1.10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fixer-le-nom-des-ports-usb">
+<h1><span class="section-number">4.4.4. </span>Fixer le nom des ports USB<a class="headerlink" href="#fixer-le-nom-des-ports-usb" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Afin de piloter le robot, deux cartes Arduino sont utilisées ce qui amène à un problème d’identification
+de ces dernières par les codes. En effet au démarrage, le pi attribue un nom de périphérique à chaque appareil
+en fonction de la vitesse de démarrage des cartes, ce qui est aléatoire. Nous devons donc faire en sorte
+d’attribuer un nom fixe en fonction de l’appareil connecté.</p>
+<p>Commencez par débrancher tous les périphériques de la Pi et rallumer la.</p>
+<p>Pour tous cette série d’étapes, nous devons passer en super utilisateur.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su<span class="w"> </span>-
+</pre></div>
+</div>
+<p>Brancher une première carte puis identifier son nom actuel :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>/dev/ttyACM*
+</pre></div>
+</div>
+<p><strong>TODO: image missing</strong></p>
+<p>Une fois le port identifié, ici ttyACM1, nous devons récupérer les données de la carte</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>udevadm<span class="w"> </span>info<span class="w"> </span>--name<span class="o">=</span>/dev/ttyACM0<span class="w"> </span>--attribute-walk
+</pre></div>
+</div>
+<p><strong>TODO: image missing</strong></p>
+<p>Repérer les premiers idProduct et idVendor à apparaître et notez les.</p>
+<p>Toujours en tant que super utilisateur, nous devons maintenant créer une nouvelle règle.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>etc/udev/rules.d/
+sudo<span class="w"> </span>nano<span class="w"> </span><span class="m">10</span>-usb-serial.rules
+</pre></div>
+</div>
+<p>Ajouter la ligne suivante avec les paramètre idVendor et idProduct obtenus</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;tty&quot;</span>,<span class="w"> </span>ATTRS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&quot;2341&quot;</span>,<span class="w"> </span>ATTRS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">&quot;0042&quot;</span>,<span class="w"> </span><span class="nv">SYMLINK</span><span class="o">+=</span><span class="s2">&quot;NouveauNom&quot;</span>
+</pre></div>
+</div>
+<p><strong>TODO: image missing</strong></p>
+<p>Vous pouvez appliquer la règle fraîchement créé avec la commande suivante, mais je vous recommande de redémarrer quand-même.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>udevadm<span class="w"> </span>trigger
+sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
+<p>Après redémarrage, vous pouvez vérifier de la manière suivante.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>/dev/NouveauNom
+</pre></div>
+</div>
+<p>Et vous devriez obtenir le résultat suivant.</p>
+<p><strong>TODO: image missing</strong></p>
+<p>Vous pouvez appliquer de nouveau la même méthode en changeant la carte à nommer et en suivant les étapes précédentes.
+Tuto suivis : <a class="reference external" href="https://dominoc925.blogspot.com/2019/11/fix-usb-serial-adapters-to-static.html">https://dominoc925.blogspot.com/2019/11/fix-usb-serial-adapters-to-static.html</a></p>
+</div>
+<div class="section" id="autres-commandes">
+<h1><span class="section-number">4.4.5. </span>Autres commandes<a class="headerlink" href="#autres-commandes" title="Lien permanent vers cette rubrique"></a></h1>
+<div class="section" id="interface-graphique">
+<h2><span class="section-number">4.4.5.1. </span>Interface graphique<a class="headerlink" href="#interface-graphique" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Désactivation de l’interface graphique :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>set-default<span class="w"> </span>multi-user.target
+</pre></div>
+</div>
+<p>Réactivation de l’interface graphique (nécessite la bonne version de l’OS) :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>set-default<span class="w"> </span>graphical.target
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="activation-des-interfaces-des-differents-bus">
+<h1><span class="section-number">4.4.6. </span>Activation des interfaces des différents bus<a class="headerlink" href="#activation-des-interfaces-des-differents-bus" title="Lien permanent vers cette rubrique"></a></h1>
+<div class="section" id="i2c">
+<h2><span class="section-number">4.4.6.1. </span>I2C<a class="headerlink" href="#i2c" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Pour utiliser de l’I2C sur Ubuntu, commencez par vérifier si il n’est pas déjà activé.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>raspi-config<span class="w"> </span>nonint<span class="w"> </span>get_i2c
+</pre></div>
+</div>
+<p>Si ça renvoie un 1 il n’est pas activé, il faut alors utiliser :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>raspi-config<span class="w"> </span>nonint<span class="w"> </span>do_i2c<span class="w"> </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>Ensuite, nous allons vérifier si nous avons les permissions :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>/dev/i2c*
+</pre></div>
+</div>
+<p>Voilà un exemple de sortie possible :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>crw-------<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>dialout<span class="w"> </span><span class="m">89</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">18</span>:59<span class="w"> </span>/dev/i2c-1
+</pre></div>
+</div>
+<p>Dans ce cas, il y a 2 groupes qui ont la permission d’utiliser l’I2C il peut donc s’ajouter au groupe dialout avec :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>dialout<span class="w"> </span>crubs
+</pre></div>
+</div>
+<p>En remplacent <em>crubs</em> par le nom de la session.</p>
+<p>Nous pouvons maintenant installer un outil permettant de détecter les adresses des composants présents sur le bus.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>i2c-tools
+</pre></div>
+</div>
+<p>Vous pouvez maintenant utiliser la commande suivante pour lancer la recherche de composants présents sur le bus.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>i2cdetect<span class="w"> </span>-1<span class="w"> </span>y
+</pre></div>
+</div>
+</div>
+<div class="section" id="spi">
+<h2><span class="section-number">4.4.6.2. </span>SPI<a class="headerlink" href="#spi" title="Lien permanent vers cette rubrique"></a></h2>
+</div>
+<div class="section" id="can">
+<h2><span class="section-number">4.4.6.3. </span>CAN<a class="headerlink" href="#can" title="Lien permanent vers cette rubrique"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Tree-Ubuntu.html" class="btn btn-neutral float-left" title="4.4. Ubuntu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Tree-Arduino.html" class="btn btn-neutral float-right" title="4.5. Arduino" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+
+
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+<script type="text/javascript" src="../_static/tcs_theme.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.5. Arduino &mdash; Documentation HRC Documentation 1.0.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/logo_48x48.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="4.5.1. Arduino" href="Arduino.html" />
+    <link rel="prev" title="4.4.1. Introduction" href="Ubuntu.html" />
+
+<link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            HRC Documentation
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../programmation_robots/Tree.html">1. Programmation Robots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programmation_robots/Tree-ROS.html">1.1. Programmation ROS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html">1.1.1. Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#fonctionnement-code">1.1.2. Fonctionnement code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#les-fichiers-erb">1.1.2.1. Les fichiers <em>.erb</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#herminebot-ou-hrc">1.1.2.2. Herminebot ou HRC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#fonctionnement-tests">1.1.3. Fonctionnement tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#executer-les-tests">1.1.3.1. Exécuter les tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#execution-sur-github">1.1.3.2. Exécution sur GitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#tests-a-ajouter">1.1.3.3. Tests à ajouter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#creer-des-plugins-nav2">1.1.4. Créer des plugins Nav2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#navigateur">1.1.4.1. Navigateur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#plugin-d-arbre-de-comportement">1.1.4.2. Plugin d’arbre de comportement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/ROS.html#comportement">1.1.4.3. Comportement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/ROS.html#ecrire-de-nouveaux-messages">1.1.5. Écrire de nouveaux messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programmation_robots/Tree-Code_conventions.html">1.2. Conventions de programmation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Code_conventions.html">1.2.1. Messages de commit et PR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Code_conventions.html#langages-de-programmation">1.2.2. Langages de programmation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/Code_conventions.html#commun">1.2.2.1. Commun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/Code_conventions.html#c">1.2.2.2. C++</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programmation_robots/Code_conventions.html#python">1.2.2.3. Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programmation_robots/Tree-Git_GitHub.html">1.3. Git et GitHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html">1.3.1. Principe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html#exemple-de-workflow">1.3.2. Exemple de workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html#github-actions">1.3.3. GitHub Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programmation_robots/Git_GitHub.html#commandes-git-utiles">1.3.4. Commandes Git utiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CAO/Tree.html">2. CAO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CAO/Tree-Solidworks.html">2.1. Solidworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/Solidworks.html">2.1.1. Solidworks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/Solidworks.html#ajout-pour-le-crubs">2.1.2. Ajout pour le CRUBS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#volet-d-infos">2.1.2.1. Volet d’infos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#bibliotheques">2.1.2.2. Bibliotheques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#macros">2.1.2.3. Macros</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#feuille-de-plans">2.1.2.4. Feuille de plans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/Solidworks.html#materiaux">2.1.2.5. Materiaux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CAO/Tree-KiCad.html">2.2. KiCad</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html">2.2.1. KiCad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#le-circuit">2.2.1.1. Le circuit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#nouveau-projet-kicad">2.2.1.2. Nouveau projet kicad</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html#editeur-de-schematique">2.2.2. Editeur de Schematique</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-1-premier-composant">2.2.2.1. Etape 1 - premier composant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-2-editeur-de-symbole">2.2.2.2. Etape 2 - Editeur de symbole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-3-finalisation-schemat">2.2.2.3. Etape 3 - finalisation schemat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-4-editeur-d-empreinte">2.2.2.4. Etape 4 - Editeur d’empreinte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-5-passage-dans-l-editeur-de-kicad">2.2.2.5. Etape 5 - Passage dans l’editeur de Kicad</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html#editeur-de-pcb-kicad">2.2.3. Editeur de PCB KiCad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-6-importer-les-empreinte">2.2.3.1. Etape 6 - Importer les empreinte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-7-bordure">2.2.3.2. Etape 7 - Bordure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-8-le-plan-de-masse">2.2.3.3. Etape 8 - Le plan de masse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-9-tracer-les-piste">2.2.3.4. Etape 9 - Tracer les piste</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-10-via">2.2.3.5. Etape 10 - Via</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-11-verification">2.2.3.6. Etape 11 - Verification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-12-encrage">2.2.3.7. Etape 12 - Encrage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-13-visualisation">2.2.3.8. Etape 13 - Visualisation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html#fabrication-du-pcb">2.2.4. Fabrication du PCB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#etape-14-exporter-les-fichier-de-fabrication">2.2.4.1. Etape 14 - Exporter les fichier de fabrication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#jlcpcb">2.2.4.2. JLCPCB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../CAO/KiCad.html#aide">2.2.5. Aide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#raccourcis-clavier">2.2.5.1. Raccourcis clavier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#composant">2.2.5.2. Composant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CAO/KiCad.html#taille-de-piste-predefinis">2.2.5.3. Taille de piste prédéfinis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Electronique/Tree.html">3. Électronique</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Lois.html">3.1. Lois</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html">3.1.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#loi-d-ohm">3.1.2. Loi d’Ohm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#loi-des-mailles">3.1.3. Loi des mailles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#loi-des-noeuds">3.1.4. Loi des nœuds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#pont-diviseur-de-tension">3.1.5. Pont diviseur de tension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#resistances-en-serie">3.1.6. Résistances en série</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#resistances-en-parallele">3.1.7. Résistances en parallèle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#theoreme-de-millman">3.1.8. Théorème de Millman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#puissance">3.1.9. Puissance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#tension-efficace">3.1.10. Tension efficace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Lois.html#autres-theoremes">3.1.11. Autres théorèmes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Composants.html">3.2. Composants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html">3.2.1. Résistances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#condensateurs">3.2.2. Condensateurs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#bobines">3.2.3. Bobines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#transistors-mosfets">3.2.4. Transistors &amp; Mosfets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Composants.html#transistor">3.2.4.1. Transistor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Composants.html#mosfet">3.2.4.2. Mosfet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#regulateur-lineaire">3.2.5. Régulateur linéaire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#regulateur-hacheur">3.2.6. Régulateur hacheur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#amplificateur-operationnel">3.2.7. Amplificateur opérationnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Composants.html#diode">3.2.8. Diode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Filtres.html">3.3. Filtres</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Filtres.html">3.3.1. Filtre passe-bas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Filtres.html#fonction-de-transfert-du-premier-ordre">3.3.1.1. Fonction de transfert du premier ordre</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Filtres.html#filtre-rc-passif">3.3.1.2. Filtre RC passif</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Electronique/Filtres.html#filtre-actif">3.3.1.3. Filtre actif</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Motorisation.html">3.4. Motorisation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Motorisation.html">3.4.1. Motorisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Electronique/Tree-Bus_communications.html">3.5. Bus &amp; communications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Electronique/Bus_communications.html">3.5.1. Bus &amp; communications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="Tree.html">4. Programmation et Informatique</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Tree-Doc_sphinx.html">4.1. Doc Sphinx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Doc_sphinx.html">4.1.1. Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#editer-la-documentation">4.1.1.1. Éditer la documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Doc_sphinx.html#commencement">4.1.2. Commencement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#installation">4.1.2.1. Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#generation">4.1.2.2. Génération</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#toctree-index-et-ordonnancement-des-fichiers">4.1.2.3. Toctree, index et ordonnancement des fichiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#compilation">4.1.2.4. Compilation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Doc_sphinx.html#generalites">4.1.3. Généralités</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#titres">4.1.3.1. Titres</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#format-de-texte">4.1.3.2. Format de texte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#liste-et-enumeration">4.1.3.3. Liste et énumération</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#tableaux">4.1.3.4. Tableaux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#notes">4.1.3.5. Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#warnings">4.1.3.6. Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#astuces">4.1.3.7. Astuces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#dangers">4.1.3.8. Dangers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Doc_sphinx.html#ajout-de-medias">4.1.4. Ajout de médias</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#bloc-de-code">4.1.4.1. Bloc de code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#images">4.1.4.2. Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#hyperlien">4.1.4.3. Hyperlien</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Doc_sphinx.html#lien-dans-la-documentation">4.1.4.4. Lien dans la documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tree-Raspberry_Pi.html">4.2. Raspberry PI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Raspberry_Pi.html">4.2.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Raspberry_Pi.html#demmarage">4.2.2. Démmarage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Raspberry_Pi.html#installation">4.2.2.1. Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspberry_Pi.html#mises-a-jour">4.2.2.2. Mises à jour</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tree-Raspbian.html">4.3. Raspbian OS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Raspbian.html">4.3.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Raspbian.html#adresse-ip-statique">4.3.2. Adresse IP statique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Raspbian.html#hotspot-wifi">4.3.3. Hotspot WIFI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#prerequis">4.3.3.1. Prerequis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#adresse-ip-fixe-en-wifi">4.3.3.2. Adresse IP fixe en wifi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#configuration-du-serveur-dhcp">4.3.3.3. Configuration du serveur DHCP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#parametrage-du-reseau-wifi">4.3.3.4. Paramétrage du réseau wifi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Raspbian.html#test">4.3.3.5. Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tree-Ubuntu.html">4.4. Ubuntu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Ubuntu.html">4.4.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ubuntu.html#hotspot-wifi-et-ip-fixes">4.4.2. Hotspot WIFI et IP fixes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Ubuntu.html#commandes-utiles">4.4.2.1. Commandes utiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Ubuntu.html#ssh">4.4.3. SSH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Ubuntu.html#wlan0">4.4.3.1. wlan0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Ubuntu.html#eth0">4.4.3.2. eth0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Ubuntu.html#depannage">4.4.3.3. Dépannage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Ubuntu.html#fixer-le-nom-des-ports-usb">4.4.4. Fixer le nom des ports USB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ubuntu.html#autres-commandes">4.4.5. Autres commandes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Ubuntu.html#interface-graphique">4.4.5.1. Interface graphique</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Ubuntu.html#activation-des-interfaces-des-differents-bus">4.4.6. Activation des interfaces des différents bus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Ubuntu.html#i2c">4.4.6.1. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Ubuntu.html#spi">4.4.6.2. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Ubuntu.html#can">4.4.6.3. CAN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.5. Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Arduino.html">4.5.1. Arduino</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Arduino.html#liaison-serie">4.5.2. Liaison serie</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Arduino.html#cote-arduino">4.5.2.1. Cote arduino</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Arduino.html#cote-python">4.5.2.2. Cote python</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Arduino.html#les-interuptions">4.5.3. Les interuptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Arduino.html#interruptions-sur-un-pin">4.5.3.1. interruptions sur un pin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Arduino.html#interruptions-sur-timer">4.5.3.2. interruptions sur timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Tree-ROS_Arduino.html">4.6. ROS-Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ROS_Arduino.html">4.6.1. Installation et Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ROS_Arduino.html#lancement-d-une-liaison-serie-ros-arduino">4.6.2. Lancement d’une liaison serie ROS - Arduino</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HRC Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+
+<span style="float: right;" >
+    <a class="github-button" href="https://github.com/Hermine-HRC/documentation"
+       data-color-scheme="no-preference: light; light: light; dark: dark;"
+       data-size="large" aria-label="Éditer cette documentation sur GitHub" >Éditer</a>
+</span>
+
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Tree.html"><span class="section-number">4. </span>Programmation et Informatique</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.5. </span>Arduino</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="arduino">
+<h1><span class="section-number">4.5. </span>Arduino<a class="headerlink" href="#arduino" title="Lien permanent vers cette rubrique"></a></h1>
+<a class="with-shadow float-right reference internal image-reference" href="../_images/arduino_logo.png"><img alt="../_images/arduino_logo.png" class="with-shadow float-right align-center" src="../_images/arduino_logo.png" style="width: 224.0px; height: 152.6px;" /></a>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Sommaire:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Arduino.html">4.5.1. Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Arduino.html#liaison-serie">4.5.2. Liaison serie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Arduino.html#cote-arduino">4.5.2.1. Cote arduino</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arduino.html#cote-python">4.5.2.2. Cote python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Arduino.html#les-interuptions">4.5.3. Les interuptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Arduino.html#interruptions-sur-un-pin">4.5.3.1. interruptions sur un pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arduino.html#interruptions-sur-timer">4.5.3.2. interruptions sur timer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Rédacteurs</p></td>
+<td><ul class="simple">
+<li><p>LOUVEAU Nicolas</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Année d’écriture</p></td>
+<td><ul class="simple">
+<li><p>2022-2023</p></li>
+<li><p>2023-2024</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Dernière modification</p></td>
+<td><ul class="simple">
+<li><p>18/09/2023</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Statut d’écriture</p></td>
+<td><ul class="simple">
+<li><p>en cours</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Statut de relecture</p></td>
+<td><ul class="simple">
+<li><p>0</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Ubuntu.html" class="btn btn-neutral float-left" title="4.4.1. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Arduino.html" class="btn btn-neutral float-right" title="4.5.1. Arduino" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+
+
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+<script type="text/javascript" src="../_static/tcs_theme.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+</body>
+</html>

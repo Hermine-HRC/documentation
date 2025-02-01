@@ -10,6 +10,7 @@ Elles sont détaillées dans la partie :doc:`/programmation_robots/Tree-Code_con
 
 .. toctree::
    :maxdepth: 2
+   :caption: Sommaire:
 
    Tree-ROS
    Tree-Code_conventions
