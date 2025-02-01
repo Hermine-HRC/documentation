@@ -16,7 +16,6 @@ composants de l'équipe et leur fonctionnement pour participer à la
 .. toctree::
    :maxdepth: 2
    :numbered:
-   :caption: Sommaire:
 
    programmation_robots/Tree
    CAO/Tree
