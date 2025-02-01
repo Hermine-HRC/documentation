@@ -8,7 +8,6 @@ Raspberry PI
    
 .. toctree::
    :maxdepth: 2
-   :caption: Sommaire:
 
    Raspberry_Pi
 

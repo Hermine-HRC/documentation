@@ -19,8 +19,8 @@ python3 -m venv .venv
 
 # pour activer l'environnement virtuel
 source .venv/bin/activate # In Linux
-.venv/Scripts/actviate.bat # In Windows CMD
-.venv/Scripts/Actviate.ps1 # In Windows Powershell
+.venv/Scripts/activate.bat # In Windows CMD
+.venv/Scripts/Activate.ps1 # In Windows Powershell
 
 pip3 install -r requirements.txt # pour installer les dépendances
 
