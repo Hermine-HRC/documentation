@@ -3,7 +3,6 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Sommaire:
 
    Tree-Lois
    Tree-Composants
