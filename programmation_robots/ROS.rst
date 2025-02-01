@@ -83,7 +83,7 @@ conventions de programmation :
 - :code:`flake8` et :code:`pep257` pour le code Python
 - :code:`uncrustify` pour le code C++
 
-Les règles sont détaillées dans la partie :doc:`/programmation_robots/Tree-Code_conventions`.
+Les règles sont détaillées dans la partie :doc:`/Informatique_Programmation/Tree-Code_conventions`.
 
 Exécuter les tests
 ------------------
