@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1.1. Programmation ROS &mdash; Documentation HRC Documentation 1.0.0</title>
+  <title>1.2.1. Le monde &mdash; Documentation HRC Documentation 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -27,8 +27,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="1.1.1. Installation" href="ROS.html" />
-    <link rel="prev" title="1. Programmation Robots" href="Tree.html" />
+    <link rel="next" title="2. CAO" href="../CAO/Tree.html" />
+    <link rel="prev" title="1.2. Gazebo" href="Tree-gazebo.html" />
 
 <link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
 
@@ -60,7 +60,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="Tree.html">1. Programmation Robots</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1. Programmation ROS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Tree-ROS.html">1.1. Programmation ROS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ROS.html">1.1.1. Installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ROS.html#fonctionnement-code">1.1.2. Fonctionnement code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="ROS.html#les-fichiers-erb">1.1.2.1. Les fichiers <em>.erb</em></a></li>
@@ -82,9 +82,9 @@
 <li class="toctree-l3"><a class="reference internal" href="ROS.html#ecrire-de-nouveaux-messages">1.1.5. Écrire de nouveaux messages</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Tree-gazebo.html">1.2. Gazebo</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Gazebo.html">1.2.1. Le monde</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Gazebo.html#les-modeles">1.2.2. Les modèles</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Tree-gazebo.html">1.2. Gazebo</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.1. Le monde</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-modeles">1.2.2. Les modèles</a></li>
 </ul>
 </li>
 </ul>
@@ -329,7 +329,8 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="Tree.html"><span class="section-number">1. </span>Programmation Robots</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">1.1. </span>Programmation ROS</li>
+          <li class="breadcrumb-item"><a href="Tree-gazebo.html"><span class="section-number">1.2. </span>Gazebo</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1.2.1. </span>Le monde</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -338,33 +339,114 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="programmation-ros">
-<h1><span class="section-number">1.1. </span>Programmation ROS<a class="headerlink" href="#programmation-ros" title="Lien permanent vers cette rubrique"></a></h1>
-<p>Ici est détaillé tout ce qui concerne le code ROS du robot (Herminebot).</p>
-<p>Plusieurs choses ont été mises en place afin d’avoir un code de qualité. Est notamment inclus l’exécution automatique
-de tests (dont linter) couplé avec un <em>code coverage</em> afin de connaitre quelles parties du code sont testées ou non.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ROS.html">1.1.1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ROS.html#fonctionnement-code">1.1.2. Fonctionnement code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#les-fichiers-erb">1.1.2.1. Les fichiers <em>.erb</em></a></li>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#herminebot-ou-hrc">1.1.2.2. Herminebot ou HRC</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ROS.html#fonctionnement-tests">1.1.3. Fonctionnement tests</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#executer-les-tests">1.1.3.1. Exécuter les tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#execution-sur-github">1.1.3.2. Exécution sur GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#tests-a-ajouter">1.1.3.3. Tests à ajouter</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ROS.html#creer-des-plugins-nav2">1.1.4. Créer des plugins Nav2</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#navigateur">1.1.4.1. Navigateur</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#plugin-d-arbre-de-comportement">1.1.4.2. Plugin d’arbre de comportement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ROS.html#comportement">1.1.4.3. Comportement</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ROS.html#ecrire-de-nouveaux-messages">1.1.5. Écrire de nouveaux messages</a></li>
-</ul>
+  <div class="section" id="le-monde">
+<h1><span class="section-number">1.2.1. </span>Le monde<a class="headerlink" href="#le-monde" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Toute simulation Gazebo est basée sur un monde. Ce monde contient des objets et des robots. Il est possible de
+définir des règles pour les objets et les robots afin de les manipuler.</p>
+<p>Le fichier est au format <code class="code docutils literal notranslate"><span class="pre">.sdf</span></code>, qui a une syntaxe <em>XML</em>. Il contient au minimum les informations suivantes :</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sdf</span><span class="w"> </span><span class="na">version=</span><span class="s">&#39;1.9&#39;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;world</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;default&#39;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;scene&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ambient&gt;</span>0.4<span class="w"> </span>0.4<span class="w"> </span>0.4<span class="w"> </span>1<span class="nt">&lt;/ambient&gt;</span>
+<span class="w">            </span><span class="nt">&lt;background&gt;</span>0.6<span class="w"> </span>0.6<span class="w"> </span>0.6<span class="w"> </span>1<span class="nt">&lt;/background&gt;</span>
+<span class="w">            </span><span class="nt">&lt;shadows&gt;</span>false<span class="nt">&lt;/shadows&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/scene&gt;</span>
+<span class="w">        </span><span class="nt">&lt;physics</span><span class="w"> </span><span class="na">type=</span><span class="s">&#39;ignored&#39;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;max_step_size&gt;</span>0.02<span class="nt">&lt;/max_step_size&gt;</span>
+<span class="w">            </span><span class="nt">&lt;real_time_factor&gt;</span>1<span class="nt">&lt;/real_time_factor&gt;</span>
+<span class="w">            </span><span class="nt">&lt;max_contacts&gt;</span>10<span class="nt">&lt;/max_contacts&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/physics&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;gz::sim::systems::Physics&#39;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&#39;libgz-sim-physics-system.so&#39;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;gz::sim::systems::UserCommands&#39;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&#39;libgz-sim-user-commands-system.so&#39;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;gz::sim::systems::SceneBroadcaster&#39;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&#39;libgz-sim-scene-broadcaster-system.so&#39;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;gz::sim::systems::Imu&#39;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&#39;libgz-sim-imu-system&#39;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;gz::sim::systems::Sensors&#39;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&#39;libgz-sim-sensors-system&#39;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;render_engine&gt;</span>ogre2<span class="nt">&lt;/render_engine&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="w">        </span><span class="nt">&lt;gravity&gt;</span>0<span class="w"> </span>0<span class="w"> </span>-9.8<span class="nt">&lt;/gravity&gt;</span>
+<span class="w">        </span><span class="nt">&lt;magnetic_field&gt;</span>6e-06<span class="w"> </span>2.3e-05<span class="w"> </span>-4.2e-05<span class="nt">&lt;/magnetic_field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;atmosphere</span><span class="w"> </span><span class="na">type=</span><span class="s">&#39;adiabatic&#39;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/world&gt;</span>
+<span class="nt">&lt;/sdf&gt;</span>
+</pre></div>
+</div>
+<p>Le monde est ensuite composé de plusieurs éléments appelés <em>models</em>. Ils peuvent être directement définis dans le world
+entre les balises <code class="code docutils literal notranslate"><span class="pre">world</span></code>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;model</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;box_model&#39;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;static&gt;</span>1<span class="nt">&lt;/static&gt;</span><span class="w"> </span><span class="cm">&lt;!-- 0 pour un model mobile, 1 pour un model statique --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pose&gt;</span>0<span class="w"> </span>0<span class="w"> </span>0.5<span class="w"> </span>0<span class="w"> </span>0<span class="w"> </span>0<span class="nt">&lt;/pose&gt;</span><span class="w"> </span><span class="cm">&lt;!-- Position du model (x y z rx ry rz) --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;link&#39;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;visual</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;visual&#39;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;geometry&gt;</span>
+<span class="w">                </span><span class="nt">&lt;box&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;size&gt;</span>1<span class="w"> </span>1<span class="w"> </span>0.1<span class="nt">&lt;/size&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/box&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/geometry&gt;</span>
+<span class="w">            </span><span class="nt">&lt;material&gt;</span><span class="w"> </span><span class="cm">&lt;!-- Couleurs --&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ambient&gt;</span>1<span class="w"> </span>1<span class="w"> </span>1<span class="w"> </span>1<span class="nt">&lt;/ambient&gt;</span>
+<span class="w">                </span><span class="nt">&lt;diffuse&gt;</span>1<span class="w"> </span>1<span class="w"> </span>1<span class="w"> </span>1<span class="nt">&lt;/diffuse&gt;</span>
+<span class="w">                </span><span class="nt">&lt;specular&gt;</span>1<span class="w"> </span>1<span class="w"> </span>1<span class="w"> </span>1<span class="nt">&lt;/specular&gt;</span>
+<span class="w">                </span><span class="nt">&lt;emissive&gt;</span>1<span class="w"> </span>1<span class="w"> </span>1<span class="w"> </span>1<span class="nt">&lt;/emissive&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/material&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/visual&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/link&gt;</span>
+<span class="nt">&lt;/model&gt;</span>
+</pre></div>
+</div>
+<p>Ils peuvent aussi être définis dans un fichier spécifique. Il faut alors utiliser la balise <code class="code docutils literal notranslate"><span class="pre">include</span></code> pour
+inclure le fichier.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;include&gt;</span>
+<span class="w">   </span><span class="nt">&lt;name&gt;</span>box_model_name_modified<span class="nt">&lt;/name&gt;</span>
+<span class="w">   </span><span class="nt">&lt;pose&gt;</span>0<span class="w"> </span>0<span class="w"> </span>1<span class="w"> </span>0<span class="w"> </span>0<span class="w"> </span>0<span class="nt">&lt;/pose&gt;</span><span class="w"> </span><span class="cm">&lt;!-- Position du model (x y z rx ry rz) --&gt;</span>
+<span class="w">   </span><span class="nt">&lt;uri&gt;</span>model://box_model<span class="nt">&lt;/uri&gt;</span>
+<span class="nt">&lt;/include&gt;</span>
+</pre></div>
+</div>
+<p>Gazebo peut aussi avoir un fichier de configuration pour définir son environnement. Voici quelques configurations :</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;MinimalScene&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;3D View&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;gz-gui&gt;</span>
+<span class="w">        </span><span class="nt">&lt;title&gt;</span>3D<span class="w"> </span>View<span class="nt">&lt;/title&gt;</span>
+<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;bool&quot;</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;showTitleBar&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/property&gt;</span>
+<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;state&quot;</span><span class="nt">&gt;</span>docked<span class="nt">&lt;/property&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/gz-gui&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;engine&gt;</span>ogre2<span class="nt">&lt;/engine&gt;</span>
+<span class="w">    </span><span class="nt">&lt;scene&gt;</span>scene<span class="nt">&lt;/scene&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ambient_light&gt;</span>0.4<span class="w"> </span>0.4<span class="w"> </span>0.4<span class="nt">&lt;/ambient_light&gt;</span>
+<span class="w">    </span><span class="nt">&lt;background_color&gt;</span>0.7<span class="w"> </span>0.7<span class="w"> </span>0.7<span class="nt">&lt;/background_color&gt;</span>
+<span class="w">    </span><span class="nt">&lt;camera_pose&gt;</span>0<span class="w"> </span>-4.5<span class="w"> </span>5.5<span class="w"> </span>0<span class="w"> </span>0.8<span class="w"> </span>1.6<span class="nt">&lt;/camera_pose&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+
+<span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;GzSceneManager&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Scene Manager&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;gz-gui&gt;</span>
+<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;resizable&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;bool&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/property&gt;</span>
+<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;width&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;double&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/property&gt;</span>
+<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;height&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;double&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/property&gt;</span>
+<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;state&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>floating<span class="nt">&lt;/property&gt;</span>
+<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;showTitleBar&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;bool&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/property&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/gz-gui&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-modeles">
+<h1><span class="section-number">1.2.2. </span>Les modèles<a class="headerlink" href="#les-modeles" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Les modèles sont des objets 3D. Ils peuvent être des robots, des objets ou des scènes. Ils sont définis dans un fichier
+<code class="code docutils literal notranslate"><span class="pre">.sdf</span></code> au format <em>XML</em>.</p>
+<p>Chaque modèle est composé de plusieurs éléments appelés <em>links</em>. Un <em>link</em> est un ensemble de <em>visuals</em> et de
+<em>collisions</em>. Entre chaque <em>link</em>, il y a un <em>joint</em> qui permet de lier les deux <em>links</em>.</p>
+<p>Si on prend l’exemple d’une jambe, le pied est un <em>link</em>, la cheville est un <em>joint</em>, le tibia est un <em>link</em>, le genou
+est un <em>joint</em>, le fémur est un <em>link</em>, etc.</p>
+<p>Les géométries, que ce soit les visuels ou les collision, peuvent provenir d’une forme par défaut comme une <em>box</em> ou
+un cylindre ou bien d’un modèle 3D importé depuis un autre fichier, <em>mesh</em>. Le format du fichier importé est soit
+<code class="code docutils literal notranslate"><span class="pre">.stl</span></code> soit <code class="code docutils literal notranslate"><span class="pre">.dae</span></code>. Le <code class="code docutils literal notranslate"><span class="pre">DAE</span></code> à l’avantage de pouvoir utiliser des textures mais à l’inconvénient de
+ne pas être supporté par tous les logiciels de modélisation.</p>
+<p>Je conseille d’exporter les modèles au format <code class="code docutils literal notranslate"><span class="pre">.stl</span></code> depuis le logiciel de modélisation puis d’ouvrir le fichier
+dans <code class="code docutils literal notranslate"><span class="pre">Blender</span></code>, d’y replacer l’objet par rapport à l’origine puis de l’exporter  en <code class="code docutils literal notranslate"><span class="pre">.stl</span></code> si un couleur
+unie suffit sinon en <code class="code docutils literal notranslate"><span class="pre">.dae</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Cette vidéo montre comment appliquer une texture image à un objet 3D : <a class="reference external" href="https://www.youtube.com/watch?v=Rx-aOHCfTOw">https://www.youtube.com/watch?v=Rx-aOHCfTOw</a></p>
 </div>
 </div>
 
@@ -372,8 +454,8 @@ de tests (dont linter) couplé avec un <em>code coverage</em> afin de connaitre 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="Tree.html" class="btn btn-neutral float-left" title="1. Programmation Robots" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="ROS.html" class="btn btn-neutral float-right" title="1.1.1. Installation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Tree-gazebo.html" class="btn btn-neutral float-left" title="1.2. Gazebo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../CAO/Tree.html" class="btn btn-neutral float-right" title="2. CAO" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
