@@ -29,12 +29,24 @@ Pour fusionner les modifications, il faut faire une *pull request* sur le dépô
    peuvent pas être faites sur cette branche. Il faut procéder à une *pull request* afin de fusionner les
    modifications.
 
-Exemple de workflow
-===================
+Exemple d'utilisation
+=====================
 
-Voici un exemple de workflow pour travailler sur le code source. Ici, les étapes sont détaillées en ligne de commande.
+Voici un exemple d'utilisation pour travailler sur le code source. Ici, les étapes sont détaillées en ligne de commande.
 Il est cependant possible d'utiliser un logiciel de gestion de code comme *GitHub Desktop* ou des IDE comme
 *Visual Studio Code* afin de réaliser ces étapes.
+
+.. warning::
+
+   Pour pouvoir réaliser toutes ces étapes, il faut avoir été ajouté en tant que *collaborateur* sur le dépôt GitHub.
+   Pour cela, se référer à l'administrateur en lui donnant votre pseudo GitHub.
+
+.. warning::
+
+   **En ligne de commande**, Git va demander de se connecter à GtiHub. Rentrer le nom d'utilisateur et le mot de passe
+   qui est un *Personal Access Token* créé sur le dépôt GitHub. Sur GitHub, se rendre dans :code:`Settings -> Developer
+   settings -> Personal access tokens -> Generate new token`. Puis coller le token dans la ligne de commande.
+
 
 1. Cloner le code source sur son propre ordinateur
 
@@ -113,6 +125,7 @@ Commandes Git utiles
    git pull # Met à jour le dépôt local
    git checkout <branche> # Change le dépôt local pour la branche spécifiée
    git switch <branche> # Change le dépôt local pour la branche spécifiée
+   git switch -c <branche> # Change le dépôt local pour la branche spécifiée et crée une nouvelle branche
    git branch # Affiche les branches
    git branch -d <branche> # Supprime la branche spécifiée
    git restore . # Restaure tous les fichiers dans le dossier courant et les sous-dossiers

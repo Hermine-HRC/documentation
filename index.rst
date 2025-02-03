@@ -7,12 +7,6 @@ Voici la documentation de l'équipe Hermine Robotic Club. Elle vise à fournir d
 composants de l'équipe et leur fonctionnement pour participer à la
 `Coupe de France de Robotique <https://www.coupederobotique.fr/>`_.
 
-.. tip::
-   Recherches récurrentes :
-
-   * `Github <https://github.com/CRUBS>`_  du club 
-   * Les informations relatives à la rédaction de cette documentation permettant sa poursuite sont disponibles ici : :doc:`/Informatique_Programmation/Tree-Doc_sphinx`
-
 .. toctree::
    :maxdepth: 2
    :numbered:
