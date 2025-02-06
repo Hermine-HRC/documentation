@@ -372,6 +372,11 @@ divers utilitaires nécessaires au développement.</p>
 Leur usage est détaillé respectivement dans les fichiers <code class="code docutils literal notranslate"><span class="pre">README.md</span></code> du dossier correspondant.</p>
 <p>Certains packages contiennent du code C++ et Python. Le code C++ est contenu dans les dossiers
 <code class="code docutils literal notranslate"><span class="pre">src/</span></code> et <code class="code docutils literal notranslate"><span class="pre">include/</span></code>. Le code Python quant à lui est contenu dans le dossier du même nom que le package.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Dans les packages <code class="code docutils literal notranslate"><span class="pre">cmake</span></code> (avec un fichier <code class="code docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>), les exécutables Python (fichiers
+avec un <code class="code docutils literal notranslate"><span class="pre">main</span></code>) doivent avoir un shebang <code class="code docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">python3</span></code> en haut du fichier.</p>
+</div>
 <p>Le package <code class="code docutils literal notranslate"><span class="pre">bringup</span></code> contient les fichiers de launch regroupant tous les packages.</p>
 <p>Les nœuds peuvent tous être configurés via un fichier de configuration au format YAML. Par conséquent, il est préférable
 d’utiliser un fichier de configuration pour les paramètres de nœuds plutôt que mettre ces paramètres en brut dans le
