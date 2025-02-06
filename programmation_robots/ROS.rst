@@ -44,6 +44,11 @@ Leur usage est détaillé respectivement dans les fichiers :code:`README.md` du 
 Certains packages contiennent du code C++ et Python. Le code C++ est contenu dans les dossiers
 :code:`src/` et :code:`include/`. Le code Python quant à lui est contenu dans le dossier du même nom que le package.
 
+.. important::
+
+   Dans les packages :code:`cmake` (avec un fichier :code:`CMakeLists.txt`), les exécutables Python (fichiers
+   avec un :code:`main`) doivent avoir un shebang :code:`#!/usr/bin/env python3` en haut du fichier.
+
 Le package :code:`bringup` contient les fichiers de launch regroupant tous les packages.
 
 Les nœuds peuvent tous être configurés via un fichier de configuration au format YAML. Par conséquent, il est préférable
