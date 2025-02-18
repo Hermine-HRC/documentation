@@ -51,6 +51,11 @@ Certains packages contiennent du code C++ et Python. Le code C++ est contenu dan
 
 Le package :code:`bringup` contient les fichiers de launch regroupant tous les packages.
 
+.. tip::
+
+   Pour avoir une coloration des logs, exécuter :code:`export RCUTILS_COLORIZED_OUTPUT=1` dans le terminal avant de
+   lancer le launch.
+
 Les nœuds peuvent tous être configurés via un fichier de configuration au format YAML. Par conséquent, il est préférable
 d'utiliser un fichier de configuration pour les paramètres de nœuds plutôt que mettre ces paramètres en brut dans le
 code.

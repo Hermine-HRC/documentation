@@ -378,6 +378,11 @@ Leur usage est détaillé respectivement dans les fichiers <code class="code doc
 avec un <code class="code docutils literal notranslate"><span class="pre">main</span></code>) doivent avoir un shebang <code class="code docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">python3</span></code> en haut du fichier.</p>
 </div>
 <p>Le package <code class="code docutils literal notranslate"><span class="pre">bringup</span></code> contient les fichiers de launch regroupant tous les packages.</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Pour avoir une coloration des logs, exécuter <code class="code docutils literal notranslate"><span class="pre">export</span> <span class="pre">RCUTILS_COLORIZED_OUTPUT=1</span></code> dans le terminal avant de
+lancer le launch.</p>
+</div>
 <p>Les nœuds peuvent tous être configurés via un fichier de configuration au format YAML. Par conséquent, il est préférable
 d’utiliser un fichier de configuration pour les paramètres de nœuds plutôt que mettre ces paramètres en brut dans le
 code.</p>
