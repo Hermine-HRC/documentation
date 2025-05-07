@@ -349,3 +349,25 @@ Dans le projet, les messages créés le sont dans le package :code:`hrc_interfac
 
 Pour créer un nouveau message, se référer au `tutoriel sur les messages
 <https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html>`_ de ROS2.
+
+Fourre tout
+===========
+
+Débugger un nœud C++
+--------------------
+
+Pour débugger un nœud C++ avec le débugger de VSCode, voir les `explications de JADC362
+<https://gist.github.com/JADC362/a4425c2d05cdaadaaa71b697b674425f>`_.
+
+.. warning::
+
+   Certains packages ne peuvent pas être compilés avec l'argument :code:`--symlink-install`.
+
+Faire une appel de service depuis un nœud qui spin déjà
+-------------------------------------------------------
+
+Pour faire une appel de service depuis un nœud qui spin déjà, voir la `demo de ijnek
+<https://github.com/ijnek/nested_services_rclcpp_demo>`_.
+
+Le fait d'envoyer une requête puis de gérer le résultat dans une callback permet au nœud de réaliser l'appel de service
+sans avoir besoin de spin avec la fonction *spin_until_future_complete*.
